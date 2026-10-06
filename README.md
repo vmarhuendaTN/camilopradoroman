@@ -1,4 +1,4 @@
-# Web de la candidatura · Camilo Prado
+# Web de la candidatura 
 
 Web estática de la candidatura de Camilo Prado al decanato de la Facultad de Ciencias de la Economía y de la Empresa (URJC). Está hecha en HTML, CSS y JavaScript puros, sin frameworks ni paso de compilación, y GitHub Pages la publica tal cual.
 
