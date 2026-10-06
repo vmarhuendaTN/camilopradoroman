@@ -18,19 +18,19 @@
 }
 
 .event__when {
-  font-size: 0.875rem;
+  font-size: var(--fs-caption);
   font-weight: var(--fw-bold);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--color-naranja-tinta);
 }
 
-.event__campus { font-size: 1.5rem; letter-spacing: -0.01em; }
+.event__campus { font-size: var(--fs-h4); letter-spacing: var(--tracking-snug); }
 
-.event__place { font-size: 1rem; color: var(--color-pizarra); }
+.event__place { font-size: var(--fs-ui); color: var(--color-pizarra); }
 
 .events__empty {
   grid-column: 1 / -1;
   font-family: var(--font-texto);
-  font-size: 1.25rem;
+  font-size: var(--fs-quote);
 }

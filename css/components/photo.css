@@ -17,7 +17,7 @@
   padding: var(--space-5);
   text-align: center;
   background: var(--color-arena);
-  border: 2px dashed var(--color-arena-borde);
-  color: #6e604c;
+  border: var(--border-grueso) dashed var(--color-arena-borde);
+  color: var(--color-arena-texto);
 }
-.photo--empty small { font-size: 0.8125rem; }
+.photo--empty small { font-size: var(--fs-xs); }

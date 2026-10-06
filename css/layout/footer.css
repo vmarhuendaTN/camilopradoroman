@@ -3,6 +3,7 @@
   background: var(--color-tinta);
   color: var(--color-texto-claro);
   padding-block: var(--space-7);
+  --color-foco: var(--color-naranja);
 }
 
 .footer__inner { display: flex; flex-direction: column; gap: var(--space-5); }
@@ -10,7 +11,7 @@
 .footer__brand { display: flex; align-items: center; gap: var(--space-4); }
 .footer__brand p {
   font-family: var(--font-texto);
-  font-size: 1.25rem;
+  font-size: var(--fs-quote);
   font-style: italic;
   color: var(--color-papel);
 }
@@ -24,8 +25,9 @@
   gap: var(--space-2) var(--space-5);
 }
 .footer__social a {
-  display: inline-block;
-  padding-block: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
   color: var(--color-naranja);
   font-weight: var(--fw-semibold);
   text-decoration: none;
@@ -37,7 +39,7 @@
   flex-direction: column;
   gap: var(--space-2);
   font-size: var(--fs-small);
-  border-top: 1px solid var(--color-tinta-2);
+  border-top: var(--border-fino) solid var(--color-tinta-2);
   padding-top: var(--space-5);
 }
 .footer__legal a { color: var(--color-texto-claro); }

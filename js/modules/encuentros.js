@@ -30,7 +30,8 @@ function eventItem(event) {
   const time = document.createElement('time');
   if (/^\d{4}-\d{2}-\d{2}$/.test(event.date)) time.dateTime = event.date;
   time.textContent = formatDate(event.date);
-  when.append(time, ` · ${event.time}`);
+  when.append(time);
+  if (event.time) when.append(` · ${event.time}`);
 
   const campus = document.createElement('h3');
   campus.className = 'event__campus';

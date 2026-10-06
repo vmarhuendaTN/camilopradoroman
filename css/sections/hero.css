@@ -18,7 +18,7 @@
 
 .hero__media { flex: 1 1 300px; min-width: 0; }
 
-.hero__title { font-size: var(--fs-h1); line-height: 0.98; }
+.hero__title { font-size: var(--fs-h1); line-height: var(--lh-display); }
 
 .hero__mark {
   background: var(--color-naranja);

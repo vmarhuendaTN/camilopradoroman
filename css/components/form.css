@@ -7,9 +7,9 @@
 .field input,
 .field select,
 .field textarea {
-  font-size: 1.0625rem;
-  padding: 0.875rem 1rem;
-  border: 1px solid var(--color-tinta-borde);
+  font-size: var(--fs-control);
+  padding: var(--control-pad-y) var(--space-4);
+  border: var(--border-fino) solid var(--color-tinta-borde);
   border-radius: var(--radius-s);
   background: var(--color-tinta-3);
   color: var(--color-papel);
@@ -38,10 +38,10 @@
 
 .form__status { min-height: 1.5em; font-weight: var(--fw-semibold); }
 .form__status[data-state='ok'] { color: var(--color-naranja); }
-.form__status[data-state='error'] { color: #ff8a8a; }
+.form__status[data-state='error'] { color: var(--color-error-claro); }
 
 .form__alt {
   font-family: var(--font-texto);
-  font-size: 1.125rem;
+  font-size: var(--fs-body);
   color: var(--color-texto-claro);
 }

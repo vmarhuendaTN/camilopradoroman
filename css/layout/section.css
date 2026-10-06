@@ -1,7 +1,11 @@
 /* Envoltorio común de sección: fondos, espaciado y cabecera. */
 .section { padding-block: var(--space-8); }
 
-.section--tinta { background: var(--color-tinta); color: var(--color-papel); }
+.section--tinta {
+  background: var(--color-tinta);
+  color: var(--color-papel);
+  --color-foco: var(--color-naranja);
+}
 .section--arena { background: var(--color-arena); color: var(--color-tinta); }
 
 .section__inner { display: flex; flex-direction: column; gap: var(--space-6); }
@@ -12,7 +16,7 @@
 
 .section__intro {
   font-family: var(--font-texto);
-  font-size: 1.3125rem;
+  font-size: var(--fs-intro);
   max-width: 40rem;
   color: var(--color-pizarra);
 }

@@ -2,14 +2,14 @@
 body {
   font-family: var(--font-titular);
   font-size: var(--fs-body);
-  line-height: 1.5;
+  line-height: var(--lh-body);
 }
 
 h1, h2, h3 {
   margin: 0;
   font-weight: var(--fw-bold);
   letter-spacing: var(--tracking-tight);
-  line-height: 1.02;
+  line-height: var(--lh-tight);
 }
 
 p { margin: 0; }
@@ -28,5 +28,5 @@ a:hover { color: var(--color-tinta); }
 .prose {
   font-family: var(--font-texto);
   font-size: var(--fs-lead);
-  line-height: 1.5;
+  line-height: var(--lh-body);
 }

@@ -18,10 +18,10 @@
 }
 
 .card__number {
-  font-size: 2.5rem;
+  font-size: var(--fs-number);
   font-weight: var(--fw-black);
   color: var(--color-naranja);
-  line-height: 1;
+  line-height: var(--lh-none);
 }
 
 .card__title { font-size: var(--fs-h3); }
@@ -30,7 +30,7 @@
 .card__list,
 .card__indicator {
   font-family: var(--font-texto);
-  font-size: 1.1875rem;
+  font-size: var(--fs-text);
   color: var(--color-texto-claro);
 }
 
@@ -38,8 +38,8 @@
 
 .card__indicator {
   margin-top: auto;
-  border-top: 1px solid var(--color-tinta-borde);
+  border-top: var(--border-fino) solid var(--color-tinta-borde);
   padding-top: var(--space-3);
-  font-size: 1.0625rem;
+  font-size: var(--fs-control);
 }
 .card__indicator strong { font-family: var(--font-titular); color: var(--color-papel); }

@@ -43,6 +43,7 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | --- | --- |
 | Textos de la portada | `index.html` (cada sección empieza con `<!-- ============ NOMBRE ============ -->`) |
 | Menú o redes sociales | `partials/header.html`, `partials/footer.html` |
+| Currículum y perfiles de investigador | `index.html`, sección «Quién soy» |
 | Agenda de encuentros | `data/encuentros.json` |
 | Colores, tipografías, espacios | `css/settings/tokens.css` |
 | Estilo de una sección | `css/sections/<seccion>.css` |
@@ -97,8 +98,8 @@ Añade un bloque a `data/encuentros.json` con `date`, `time`, `campus`, `place` 
 ### Activar el formulario
 Pega la dirección de Formspree en `formEndpoint` de `js/config.js` y nombra el servicio en `privacidad.html`.
 
-### Conectar el dominio
-`CNAME.example` → `CNAME` con el dominio dentro; actualiza las URL de `robots.txt` y `sitemap.xml`. Sin dominio propio, `404.html` necesita el prefijo `/<repo>` en sus rutas.
+### Dominio
+Principal: `www.camilopradoroman.com` (archivo `CNAME`). `camilopradoroman.es` redirige a él desde el proveedor del dominio. Si cambia, actualiza `CNAME`, `robots.txt`, `sitemap.xml` y las etiquetas `canonical` y `og:` de `index.html`. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
 
 ## Reglas de marca (brandbook)
 
@@ -135,4 +136,5 @@ Pega la dirección de Formspree en `formEndpoint` de `js/config.js` y nombra el 
 
 - Plan de comunicación y brandbook definitivos: documento compartido de la campaña (pestañas «Plan de comunicación» y «Brandbook»).
 - Piezas de diseño (logo, posts, story, carrusel, maqueta web): lienzo de diseño de la campaña.
-- Pendiente de confirmar: fechas electorales, visto bueno de la Junta Electoral al uso de colores URJC, medidas del programa, equipo decanal, dominio y usuario `@pradodecano`.
+- Pendiente de confirmar: fechas electorales, visto bueno de la Junta Electoral al uso de colores URJC, medidas del programa, equipo decanal y canal de WhatsApp.
+- Confirmado: dominio `www.camilopradoroman.com` (y `.es`), Instagram `@cpradoroman`, LinkedIn y perfiles de investigador.
