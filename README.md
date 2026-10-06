@@ -29,7 +29,7 @@ camilopradoroman/
 │   ├── logo/                Sello CP (principal, inversa, favicon)
 │   ├── img/                 Fotografías
 │   └── docs/                PDF del programa y otros descargables
-├── CNAME                    Dominio: www.camilopradoroman.com
+├── CNAME.example            Dominio preparado: www.camilopradoroman.com (ver «Dominio propio»)
 ├── .nojekyll                Indica a GitHub Pages que publique los archivos tal cual
 ├── robots.txt
 └── sitemap.xml
@@ -106,11 +106,12 @@ Cada cambio que se suba a `main` se publica solo.
 
 ### Dominio propio
 
-La dirección principal es `www.camilopradoroman.com` (archivo `CNAME`; GitHub Pages admite un solo dominio).
+La dirección principal será `www.camilopradoroman.com` (GitHub Pages admite un solo dominio). Mientras no esté configurado, la web se ve en `https://<usuario>.github.io/camilopradoroman/`.
 
-1. En el proveedor del dominio `.com`, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain**: un `CNAME` de `www` hacia `<usuario>.github.io` y los registros `A` del dominio raíz. Después activa **Enforce HTTPS**.
-2. En el proveedor del dominio `.es`, configura una redirección permanente (301) de `camilopradoroman.es` y `www.camilopradoroman.es` a `https://www.camilopradoroman.com`.
-3. Si algún día cambia el dominio, actualízalo en `CNAME`, `sitemap.xml`, `robots.txt` y en las etiquetas `canonical` y `og:` de `index.html`.
+1. Cuando el DNS esté listo, renombra `CNAME.example` a `CNAME` (ya contiene el dominio). Hazlo después del DNS: con `CNAME` publicado, GitHub redirige al dominio y, si este no responde, la web deja de verse.
+2. En el proveedor del dominio `.com`, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain**: un `CNAME` de `www` hacia `<usuario>.github.io` y los registros `A` del dominio raíz. Después activa **Enforce HTTPS**.
+3. En el proveedor del dominio `.es`, configura una redirección permanente (301) de `camilopradoroman.es` y `www.camilopradoroman.es` a `https://www.camilopradoroman.com`.
+4. Si algún día cambia el dominio, actualízalo en `CNAME`, `sitemap.xml`, `robots.txt` y en las etiquetas `canonical` y `og:` de `index.html`.
 
 La página 404 funciona igual con dominio propio y sin él: calcula sola la base de sus rutas.
 

@@ -99,7 +99,7 @@ Añade un bloque a `data/encuentros.json` con `date`, `time`, `campus`, `place` 
 Pega la dirección de Formspree en `formEndpoint` de `js/config.js` y nombra el servicio en `privacidad.html`.
 
 ### Dominio
-Principal: `www.camilopradoroman.com` (archivo `CNAME`). `camilopradoroman.es` redirige a él desde el proveedor del dominio. Si cambia, actualiza `CNAME`, `robots.txt`, `sitemap.xml` y las etiquetas `canonical` y `og:` de `index.html`. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
+Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra a `CNAME` cuando el DNS esté configurado (antes, la web se ve en `github.io/camilopradoroman`). `camilopradoroman.es` redirige a él desde el proveedor del dominio. Si cambia, actualiza `CNAME`, `robots.txt`, `sitemap.xml` y las etiquetas `canonical` y `og:` de `index.html`. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
 
 ## Reglas de marca (brandbook)
 
