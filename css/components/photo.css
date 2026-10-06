@@ -1,0 +1,23 @@
+/* Fotografías y su marcador de posición (lo crea js/modules/photos.js si falta el archivo). */
+.photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-l);
+}
+.photo--square { aspect-ratio: 1 / 1; }
+
+.photo--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  text-align: center;
+  background: var(--color-arena);
+  border: 2px dashed var(--color-arena-borde);
+  color: #6e604c;
+}
+.photo--empty small { font-size: 0.8125rem; }

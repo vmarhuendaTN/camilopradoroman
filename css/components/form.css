@@ -1,0 +1,47 @@
+/* Formulario de contacto sobre fondo tinta (js/modules/contact-form.js). */
+.form { display: flex; flex-direction: column; gap: var(--space-5); }
+
+.field { display: flex; flex-direction: column; gap: var(--space-2); }
+.field label { font-size: var(--fs-small); font-weight: var(--fw-bold); }
+
+.field input,
+.field select,
+.field textarea {
+  font-size: 1.0625rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-tinta-borde);
+  border-radius: var(--radius-s);
+  background: var(--color-tinta-3);
+  color: var(--color-papel);
+}
+.field [aria-invalid='true'] { border-color: var(--color-naranja); }
+
+.check {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  font-size: var(--fs-small);
+  color: var(--color-texto-claro);
+}
+.check input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: var(--color-naranja);
+}
+
+.check a,
+.form__alt a { color: var(--color-naranja); }
+
+.form__submit { align-self: flex-start; }
+
+.form__status { min-height: 1.5em; font-weight: var(--fw-semibold); }
+.form__status[data-state='ok'] { color: var(--color-naranja); }
+.form__status[data-state='error'] { color: #ff8a8a; }
+
+.form__alt {
+  font-family: var(--font-texto);
+  font-size: 1.125rem;
+  color: var(--color-texto-claro);
+}

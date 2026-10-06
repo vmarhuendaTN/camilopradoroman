@@ -1,0 +1,41 @@
+/* Presentación y credenciales. */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-7);
+  align-items: flex-start;
+}
+
+.about__media { flex: 1 1 260px; min-width: 0; max-width: 360px; }
+
+.about__text {
+  flex: 999 1 420px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.stats {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-3);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-1);
+  padding: var(--space-5);
+  background: var(--color-blanco);
+  border-radius: var(--radius-m);
+}
+.stat dd {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: var(--fw-black);
+  line-height: 1.1;
+  color: var(--color-rojo);
+}
+.stat dt { font-size: var(--fs-small); color: var(--color-pizarra); }

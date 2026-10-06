@@ -1,0 +1,28 @@
+/* Botones. Variantes: .btn--primario (naranja), .btn--secundario (borde), .btn--oscuro (tinta). */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.875rem 1.5rem;
+  border: 0;
+  border-radius: var(--radius-s);
+  font-family: var(--font-titular);
+  font-size: 1.0625rem;
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn--primario { background: var(--color-naranja); color: var(--color-tinta); }
+.btn--primario:hover { background: var(--color-naranja-hover); color: var(--color-tinta); }
+
+.btn--secundario { border: 2px solid var(--color-tinta); color: var(--color-tinta); }
+.btn--secundario:hover { background: var(--color-tinta); color: var(--color-papel); }
+
+.btn--oscuro { background: var(--color-tinta); color: var(--color-papel); }
+.btn--oscuro:hover { background: var(--color-tinta-2); color: var(--color-papel); }
+
+.btn[disabled] { opacity: 0.6; cursor: wait; transform: none; }

@@ -1,0 +1,43 @@
+/* Pestañas accesibles (js/modules/tabs.js). Sin JavaScript se muestran todos los paneles. */
+.tabs { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.tabs__list { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+.tabs__tab {
+  min-height: 2.75rem;
+  padding: 0.625rem 1.375rem;
+  border: 2px solid var(--color-tinta);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-tinta);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+.tabs__tab[aria-selected='true'] { background: var(--color-tinta); color: var(--color-papel); }
+
+.tabs__panel {
+  background: var(--color-blanco);
+  border-radius: var(--radius-l);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tabs__title { font-size: 1.875rem; }
+
+.tabs__items { list-style: none; margin: 0; padding: 0; }
+.tabs__items li {
+  display: flex;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--color-linea-suave);
+  font-family: var(--font-texto);
+  font-size: 1.3125rem;
+}
+.tabs__items li::before {
+  content: '→';
+  font-family: var(--font-titular);
+  font-weight: var(--fw-bold);
+  color: var(--color-rojo);
+}

@@ -1,0 +1,64 @@
+/*
+  Tokens de marca (brandbook). Cambiar un valor aquí lo cambia en toda la web.
+  No escribas colores, tipografías ni espacios sueltos en otros archivos: usa estas variables.
+*/
+:root {
+  /* Color */
+  --color-papel: #fbf7f1;          /* fondo principal */
+  --color-tinta: #17182b;          /* texto y fondos de autoridad */
+  --color-tinta-2: #2a2b40;        /* paneles sobre tinta */
+  --color-tinta-3: #22233a;        /* campos de formulario sobre tinta */
+  --color-tinta-borde: #4a4b62;    /* bordes sobre tinta */
+  --color-naranja: #f8931f;        /* naranja Facultad: acento; nunca texto blanco encima */
+  --color-naranja-hover: #ffa33d;
+  --color-naranja-tinta: #a85200;  /* texto naranja sobre fondo claro (contraste 5:1) */
+  --color-rojo: #cb0017;           /* rojo URJC: pertenencia; nunca fondo dominante */
+  --color-arena: #f3e6d3;          /* paneles y datos */
+  --color-arena-borde: #d9c3a3;
+  --color-pizarra: #5a5c70;        /* texto secundario */
+  --color-linea: #d9d2c5;          /* filetes sobre papel */
+  --color-linea-suave: #ece4d7;
+  --color-blanco: #ffffff;
+  --color-texto-claro: #e8e2d6;    /* texto secundario sobre tinta */
+
+  /* Tipografía */
+  --font-titular: 'Libre Franklin', Arial, sans-serif;
+  --font-texto: 'Newsreader', Georgia, serif;
+
+  --fs-small: 0.9375rem;
+  --fs-body: 1.125rem;
+  --fs-lead: 1.375rem;
+  --fs-h3: 1.625rem;
+  --fs-h2: clamp(2rem, 4vw, 3.25rem);
+  --fs-h1: clamp(2.75rem, 6vw, 5.25rem);
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 800;
+  --fw-black: 900;
+
+  --tracking-tight: -0.03em;
+  --tracking-caps: 0.14em;
+
+  /* Espacio */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 5rem;
+
+  /* Forma */
+  --radius-s: 10px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+  --radius-pill: 999px;
+
+  /* Maquetación */
+  --container: 1200px;
+  --container-narrow: 760px;
+  --gutter: 1.5rem;
+  --header-h: 4.5rem;
+}

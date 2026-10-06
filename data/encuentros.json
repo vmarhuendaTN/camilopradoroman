@@ -1,0 +1,23 @@
+[
+  {
+    "date": "[FECHA]",
+    "time": "[HORA]",
+    "campus": "Campus de Vicálvaro",
+    "place": "[ESPACIO]",
+    "format": "Café con el candidato"
+  },
+  {
+    "date": "[FECHA]",
+    "time": "[HORA]",
+    "campus": "Campus de Móstoles",
+    "place": "[ESPACIO]",
+    "format": "Café con el candidato"
+  },
+  {
+    "date": "[FECHA]",
+    "time": "[HORA]",
+    "campus": "[OTRO CAMPUS]",
+    "place": "[ESPACIO]",
+    "format": "Café con el candidato"
+  }
+]

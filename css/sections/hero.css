@@ -1,0 +1,38 @@
+/* Portada. */
+.hero { padding-block: var(--space-8) var(--space-7); }
+
+.hero__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.hero__text {
+  flex: 999 1 520px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.hero__media { flex: 1 1 300px; min-width: 0; }
+
+.hero__title { font-size: var(--fs-h1); line-height: 0.98; }
+
+.hero__mark {
+  background: var(--color-naranja);
+  padding: 0 0.15em;
+  border-radius: var(--radius-s);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hero__lead {
+  font-family: var(--font-texto);
+  font-size: var(--fs-lead);
+  color: var(--color-pizarra);
+  max-width: 38rem;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }

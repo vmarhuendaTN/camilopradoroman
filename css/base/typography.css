@@ -1,0 +1,32 @@
+/* Tipografía base: Libre Franklin para titulares e interfaz, Newsreader para texto largo. */
+body {
+  font-family: var(--font-titular);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.02;
+}
+
+p { margin: 0; }
+
+a { color: var(--color-naranja-tinta); }
+a:hover { color: var(--color-tinta); }
+
+.eyebrow {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-naranja-tinta);
+}
+
+.prose {
+  font-family: var(--font-texto);
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+}

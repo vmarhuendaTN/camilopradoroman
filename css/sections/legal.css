@@ -1,0 +1,10 @@
+/* Páginas de texto: privacidad y 404. */
+.legal p {
+  font-family: var(--font-texto);
+  font-size: 1.1875rem;
+  line-height: 1.6;
+}
+.legal strong { font-family: var(--font-titular); }
+.legal .btn { font-family: var(--font-titular); }
+
+.notfound { min-height: 80vh; display: flex; align-items: center; }
