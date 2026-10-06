@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Camilo Prado · Candidato a decano</title>
-  <meta name="description" content="Candidatura de Camilo Prado al decanato de la Facultad de Ciencias de la Economía y de la Empresa (URJC): una Facultad que se mide por su impacto.">
+  <meta name="description" content="Candidatura de Camilo Prado al decanato de la Facultad de Ciencias de la Economía y de la Empresa (URJC). Aquí se viene a crecer.">
   <meta name="theme-color" content="#17182b">
   <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://www.camilopradoroman.com/">
@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://www.camilopradoroman.com/">
   <meta property="og:locale" content="es_ES">
   <meta property="og:title" content="Camilo Prado · Candidato a decano">
-  <meta property="og:description" content="Una Facultad que se mide por su impacto.">
+  <meta property="og:description" content="Aquí se viene a crecer.">
   <meta property="og:image" content="https://www.camilopradoroman.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -39,19 +39,19 @@
 
     <!-- ============ PORTADA ============ -->
     <section class="hero" aria-labelledby="hero-titulo">
-      <div class="container hero__inner">
-        <div class="hero__text">
+      <div class="container container--wide hero__inner">
+        <div class="hero__text" data-reveal>
           <p class="eyebrow">Candidatura al decanato · Facultad de Ciencias de la Economía y de la Empresa</p>
-          <h1 id="hero-titulo" class="hero__title">Una Facultad que se mide por su <span class="hero__mark">impacto.</span></h1>
+          <h1 id="hero-titulo" class="hero__title">Aquí se viene a <span class="text-marca">crecer.</span></h1>
           <p class="hero__lead">Más investigación de calidad, una docencia conectada con la empresa y una Facultad que cuida a quienes la hacen cada día. Con medidas concretas e indicadores públicos.</p>
           <div class="hero__actions">
             <a class="btn btn--primario" href="#programa">Leer el programa</a>
-            <a class="btn btn--secundario" href="#encuentros">Ven a un café</a>
+            <a class="link-flecha" href="#encuentros">Ven a un café</a>
           </div>
         </div>
-        <div class="hero__media">
-          <!-- FOTO: sube assets/img/camilo-prado-hero.jpg (vertical 4:5) -->
-          <img class="photo" src="assets/img/camilo-prado-hero.jpg" alt="Camilo Prado en el campus" width="800" height="1000" data-placeholder="Camilo en el campus">
+        <div class="hero__media" data-reveal>
+          <!-- FOTO: sube assets/img/camilo-prado-hero.jpg (horizontal 16:9; en móvil se recorta a 4:5 por el centro) -->
+          <img class="photo photo--wide" src="assets/img/camilo-prado-hero.jpg" alt="Camilo Prado en el campus" width="1600" height="900" fetchpriority="high" data-placeholder="Camilo en el campus">
         </div>
       </div>
     </section>
@@ -59,12 +59,13 @@
     <!-- ============ PROGRAMA ============ -->
     <section id="programa" class="section section--tinta" aria-labelledby="programa-titulo">
       <div class="container section__inner">
-        <header class="section__header">
-          <h2 id="programa-titulo" class="section__title">Tres compromisos</h2>
+        <header class="section__header section__header--center" data-reveal>
+          <p class="eyebrow">Programa</p>
+          <h2 id="programa-titulo" class="section__title">Tres compromisos.</h2>
           <p class="section__intro">Cada uno con sus medidas y un indicador que podrás comprobar cada curso.</p>
         </header>
 
-        <ol class="cards">
+        <ol class="cards" data-reveal-stagger>
           <li class="card">
             <span class="card__number" aria-hidden="true">01</span>
             <h3 class="card__title">Investigar más y mejor</h3>
@@ -73,7 +74,7 @@
               <li>[MEDIDA 1]</li>
               <li>[MEDIDA 2]</li>
             </ul>
-            <p class="card__indicator"><strong>Cómo lo mediremos:</strong> [INDICADOR PÚBLICO Y PLAZO]</p>
+            <p class="card__indicator"><strong>Cómo lo mediremos</strong> [INDICADOR PÚBLICO Y PLAZO]</p>
           </li>
           <li class="card">
             <span class="card__number" aria-hidden="true">02</span>
@@ -83,7 +84,7 @@
               <li>[MEDIDA 1]</li>
               <li>[MEDIDA 2]</li>
             </ul>
-            <p class="card__indicator"><strong>Cómo lo mediremos:</strong> [INDICADOR PÚBLICO Y PLAZO]</p>
+            <p class="card__indicator"><strong>Cómo lo mediremos</strong> [INDICADOR PÚBLICO Y PLAZO]</p>
           </li>
           <li class="card">
             <span class="card__number" aria-hidden="true">03</span>
@@ -93,13 +94,13 @@
               <li>[MEDIDA 1]</li>
               <li>[MEDIDA 2]</li>
             </ul>
-            <p class="card__indicator"><strong>Cómo lo mediremos:</strong> [INDICADOR PÚBLICO Y PLAZO]</p>
+            <p class="card__indicator"><strong>Cómo lo mediremos</strong> [INDICADOR PÚBLICO Y PLAZO]</p>
           </li>
         </ol>
 
-        <div>
+        <div class="section__actions" data-reveal>
           <!-- PDF del programa: assets/docs/programa-camilo-prado.pdf -->
-          <a class="btn btn--primario" href="assets/docs/programa-camilo-prado.pdf" download>Descargar el programa completo (PDF)</a>
+          <a class="btn btn--acento" href="assets/docs/programa-camilo-prado.pdf" download>Descargar el programa completo (PDF)</a>
         </div>
       </div>
     </section>
@@ -107,52 +108,65 @@
     <!-- ============ PARA TI (pestañas por colectivo) ============ -->
     <section id="para-ti" class="section" aria-labelledby="para-ti-titulo">
       <div class="container section__inner">
-        <header class="section__header">
+        <header class="section__header section__header--center" data-reveal>
+          <p class="eyebrow">Para ti</p>
           <h2 id="para-ti-titulo" class="section__title">¿Qué cambia para ti?</h2>
         </header>
 
-        <div class="tabs" data-tabs>
+        <div class="tabs" data-tabs data-reveal>
           <div class="tabs__list" role="tablist" aria-label="Colectivo" hidden>
             <button type="button" class="tabs__tab" role="tab" id="tab-estudiantes" aria-controls="panel-estudiantes">Estudiantes</button>
             <button type="button" class="tabs__tab" role="tab" id="tab-pdi" aria-controls="panel-pdi">PDI</button>
             <button type="button" class="tabs__tab" role="tab" id="tab-ptgas" aria-controls="panel-ptgas">PTGAS</button>
           </div>
 
-          <div class="tabs__panel" role="tabpanel" id="panel-estudiantes" aria-labelledby="tab-estudiantes" tabindex="0">
-            <h3 class="tabs__title">Tu título, con más valor</h3>
-            <ul class="tabs__items">
-              <li>Más prácticas en empresa: [MEDIDA]</li>
-              <li>Representación estudiantil con voz real: [MEDIDA]</li>
-              <li>Docencia con simuladores y casos reales: [MEDIDA]</li>
-            </ul>
-          </div>
+          <div class="tabs__panels">
+            <div class="tabs__panel" role="tabpanel" id="panel-estudiantes" aria-labelledby="tab-estudiantes" tabindex="0">
+              <div>
+                <span class="eyebrow tabs__kicker">Estudiantes</span>
+                <h3 class="tabs__title">Tu título, con más valor</h3>
+              </div>
+              <ul class="tabs__items">
+                <li>Más prácticas en empresa: [MEDIDA]</li>
+                <li>Representación estudiantil con voz real: [MEDIDA]</li>
+                <li>Docencia con simuladores y casos reales: [MEDIDA]</li>
+              </ul>
+            </div>
 
-          <div class="tabs__panel" role="tabpanel" id="panel-pdi" aria-labelledby="tab-pdi" tabindex="0">
-            <h3 class="tabs__title">Investigar con apoyo, no a pesar de todo</h3>
-            <ul class="tabs__items">
-              <li>Acompañamiento a sexenios y acreditaciones: [MEDIDA]</li>
-              <li>Apoyo a la publicación Q1–Q2: [MEDIDA]</li>
-              <li>Carga docente equilibrada: [MEDIDA]</li>
-            </ul>
-          </div>
+            <div class="tabs__panel" role="tabpanel" id="panel-pdi" aria-labelledby="tab-pdi" tabindex="0">
+              <div>
+                <span class="eyebrow tabs__kicker">PDI</span>
+                <h3 class="tabs__title">Investigar con apoyo, no a pesar de todo</h3>
+              </div>
+              <ul class="tabs__items">
+                <li>Acompañamiento a sexenios y acreditaciones: [MEDIDA]</li>
+                <li>Apoyo a la publicación Q1–Q2: [MEDIDA]</li>
+                <li>Carga docente equilibrada: [MEDIDA]</li>
+              </ul>
+            </div>
 
-          <div class="tabs__panel" role="tabpanel" id="panel-ptgas" aria-labelledby="tab-ptgas" tabindex="0">
-            <h3 class="tabs__title">Una Facultad que reconoce tu trabajo</h3>
-            <ul class="tabs__items">
-              <li>Interlocución directa con el decanato: [MEDIDA]</li>
-              <li>Procesos más simples: [MEDIDA]</li>
-              <li>Reconocimiento y formación: [MEDIDA]</li>
-            </ul>
+            <div class="tabs__panel" role="tabpanel" id="panel-ptgas" aria-labelledby="tab-ptgas" tabindex="0">
+              <div>
+                <span class="eyebrow tabs__kicker">PTGAS</span>
+                <h3 class="tabs__title">Una Facultad que reconoce tu trabajo</h3>
+              </div>
+              <ul class="tabs__items">
+                <li>Interlocución directa con el decanato: [MEDIDA]</li>
+                <li>Procesos más simples: [MEDIDA]</li>
+                <li>Reconocimiento y formación: [MEDIDA]</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============ ENCUENTROS (se cargan desde data/encuentros.json) ============ -->
-    <section id="encuentros" class="section section--arena" aria-labelledby="encuentros-titulo">
+    <section id="encuentros" class="section section--papel-2" aria-labelledby="encuentros-titulo">
       <div class="container section__inner">
-        <header class="section__header">
-          <h2 id="encuentros-titulo" class="section__title">Café con el candidato</h2>
+        <header class="section__header" data-reveal>
+          <p class="eyebrow">Encuentros</p>
+          <h2 id="encuentros-titulo" class="section__title">Café con el candidato.</h2>
           <p class="section__intro">Antes de cerrar el programa, quiero escucharte en tu campus.</p>
         </header>
         <ul class="events" data-encuentros data-src="data/encuentros.json" aria-live="polite">
@@ -165,35 +179,35 @@
     <!-- ============ QUIÉN SOY ============ -->
     <section id="quien-soy" class="section" aria-labelledby="quien-soy-titulo">
       <div class="container section__inner">
-        <header class="section__header">
-          <h2 id="quien-soy-titulo" class="section__title">Quién soy</h2>
-        </header>
         <div class="about">
-          <div class="about__media">
-            <!-- FOTO: sube assets/img/camilo-prado-retrato.jpg (cuadrada) -->
-            <img class="photo photo--square" src="assets/img/camilo-prado-retrato.jpg" alt="Retrato de Camilo Prado" width="720" height="720" loading="lazy" data-placeholder="retrato de Camilo">
+          <div class="about__media" data-reveal>
+            <!-- FOTO: sube assets/img/camilo-prado-retrato.jpg (vertical 4:5) -->
+            <img class="photo" src="assets/img/camilo-prado-retrato.jpg" alt="Retrato de Camilo Prado" width="800" height="1000" loading="lazy" data-placeholder="retrato de Camilo">
           </div>
-          <div class="about__text">
+          <div class="about__text" data-reveal>
+            <p class="eyebrow">Quién soy</p>
+            <h2 id="quien-soy-titulo" class="section__title">Camilo Prado Román.</h2>
             <p class="prose">Catedrático de Economía Financiera y Contabilidad en el Departamento de Economía de la Empresa de la URJC. Presido la European Academy of Management and Business Economics (AEDEM). Investigo cómo las organizaciones ganan legitimidad, cómo la inteligencia artificial anticipa los mercados y cómo el bienestar retiene el talento.</p>
-            <dl class="stats">
-              <div class="stat"><dt>Sexenios de investigación</dt><dd>2</dd></div>
-              <div class="stat"><dt>Quinquenios docentes</dt><dd>4</dd></div>
-              <div class="stat"><dt>Evaluación Docentia</dt><dd>Muy favorable</dd></div>
-              <div class="stat"><dt>Presidente</dt><dd>AEDEM</dd></div>
-            </dl>
-
-            <div class="profiles">
-              <h3 class="profiles__title">Currículum y perfiles de investigador</h3>
-              <ul class="profiles__list">
-                <li><a class="profile" href="https://servicios.urjc.es/pdi/ver/camilo.prado.roman" target="_blank" rel="noopener"><span class="profile__name">Currículum en la URJC</span><span class="profile__id">Ficha de PDI</span></a></li>
-                <li><a class="profile" href="https://www.scopus.com/authid/detail.uri?authorId=55321795000" target="_blank" rel="noopener"><span class="profile__name">Scopus</span><span class="profile__id">55321795000</span></a></li>
-                <li><a class="profile" href="https://www.researcherid.com/rid/A-3511-2016" target="_blank" rel="noopener"><span class="profile__name">Web of Science</span><span class="profile__id">A-3511-2016</span></a></li>
-                <li><a class="profile" href="https://scholar.google.com/citations?user=wY31Y_QAAAAJ" target="_blank" rel="noopener"><span class="profile__name">Google Scholar</span><span class="profile__id">wY31Y_QAAAAJ</span></a></li>
-                <li><a class="profile" href="https://orcid.org/0000-0002-1540-0643" target="_blank" rel="noopener"><span class="profile__name">ORCID</span><span class="profile__id">0000-0002-1540-0643</span></a></li>
-                <li><a class="profile" href="https://dialnet.unirioja.es/servlet/autor?codigo=1962039" target="_blank" rel="noopener"><span class="profile__name">Dialnet</span><span class="profile__id">1962039</span></a></li>
-              </ul>
-            </div>
           </div>
+        </div>
+
+        <dl class="stats" data-reveal-stagger>
+          <div class="stat"><dt>Sexenios de investigación</dt><dd>2</dd></div>
+          <div class="stat"><dt>Quinquenios docentes</dt><dd>4</dd></div>
+          <div class="stat"><dt>Evaluación Docentia</dt><dd class="stat__texto">Muy favorable</dd></div>
+          <div class="stat"><dt>Presidente</dt><dd class="stat__texto">AEDEM</dd></div>
+        </dl>
+
+        <div class="profiles" data-reveal>
+          <h3 class="profiles__title">Currículum y perfiles de investigador</h3>
+          <ul class="profiles__list">
+            <li><a class="profile" href="https://servicios.urjc.es/pdi/ver/camilo.prado.roman" target="_blank" rel="noopener"><span class="profile__name">Currículum en la URJC</span><span class="profile__id">Ficha de PDI</span></a></li>
+            <li><a class="profile" href="https://www.scopus.com/authid/detail.uri?authorId=55321795000" target="_blank" rel="noopener"><span class="profile__name">Scopus</span><span class="profile__id">55321795000</span></a></li>
+            <li><a class="profile" href="https://www.researcherid.com/rid/A-3511-2016" target="_blank" rel="noopener"><span class="profile__name">Web of Science</span><span class="profile__id">A-3511-2016</span></a></li>
+            <li><a class="profile" href="https://scholar.google.com/citations?user=wY31Y_QAAAAJ" target="_blank" rel="noopener"><span class="profile__name">Google Scholar</span><span class="profile__id">wY31Y_QAAAAJ</span></a></li>
+            <li><a class="profile" href="https://orcid.org/0000-0002-1540-0643" target="_blank" rel="noopener"><span class="profile__name">ORCID</span><span class="profile__id">0000-0002-1540-0643</span></a></li>
+            <li><a class="profile" href="https://dialnet.unirioja.es/servlet/autor?codigo=1962039" target="_blank" rel="noopener"><span class="profile__name">Dialnet</span><span class="profile__id">1962039</span></a></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -201,13 +215,14 @@
     <!-- ============ CONTACTO ============ -->
     <section id="contacto" class="section section--tinta" aria-labelledby="contacto-titulo">
       <div class="container container--narrow section__inner">
-        <header class="section__header">
-          <h2 id="contacto-titulo" class="section__title">Escríbeme</h2>
+        <header class="section__header section__header--center" data-reveal>
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contacto-titulo" class="section__title">Escríbeme.</h2>
           <p class="section__intro">Leo todos los mensajes. Tu propuesta puede acabar en el programa.</p>
         </header>
 
         <!-- La dirección del formulario se configura en js/config.js (servicio Formspree) -->
-        <form class="form" data-contact-form method="POST" novalidate>
+        <form class="form" data-contact-form method="POST" novalidate data-reveal>
           <div class="field">
             <label for="nombre">Nombre</label>
             <input id="nombre" name="nombre" type="text" autocomplete="name" required>
@@ -216,7 +231,7 @@
             <label for="email">Correo electrónico</label>
             <input id="email" name="email" type="email" autocomplete="email" required>
           </div>
-          <div class="field">
+          <div class="field field--full">
             <label for="colectivo">Soy</label>
             <select id="colectivo" name="colectivo">
               <option>Estudiante</option>
@@ -225,7 +240,7 @@
               <option>Otro</option>
             </select>
           </div>
-          <div class="field">
+          <div class="field field--full">
             <label for="mensaje">Tu propuesta o pregunta</label>
             <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
           </div>
@@ -234,8 +249,10 @@
             <label for="privacidad">He leído la <a href="privacidad.html">política de privacidad</a> y acepto que se usen mis datos solo para responderme.</label>
           </div>
           <input class="visually-hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="btn btn--primario form__submit" type="submit">Enviar</button>
-          <p class="form__status" role="status" aria-live="polite"></p>
+          <div class="form__footer">
+            <button class="btn btn--acento form__submit" type="submit">Enviar</button>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </div>
         </form>
 
         <p class="form__alt">¿Prefieres recibir solo los avisos de encuentros? <a href="https://whatsapp.com/channel/[ID]" target="_blank" rel="noopener">Únete al canal de WhatsApp</a>.</p>

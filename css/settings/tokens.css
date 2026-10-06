@@ -1,66 +1,82 @@
 /*
   Tokens de marca (brandbook). Cambiar un valor aquí lo cambia en toda la web.
   No escribas colores, tipografías ni espacios sueltos en otros archivos: usa estas variables.
+
+  Criterio visual: base neutra (papel y blanco), tinta para los bloques de autoridad
+  y los colores de marca solo como detalle (acentos, cifras, filetes).
 */
 :root {
-  /* Color */
+  /* Color: marca */
   --color-papel: #fbf7f1;          /* fondo principal */
   --color-tinta: #17182b;          /* texto y fondos de autoridad */
-  --color-tinta-2: #2a2b40;        /* paneles sobre tinta */
-  --color-tinta-3: #22233a;        /* campos de formulario sobre tinta */
-  --color-tinta-borde: #4a4b62;    /* bordes sobre tinta */
   --color-naranja: #f8931f;        /* naranja Facultad: acento; nunca texto blanco encima */
   --color-naranja-hover: #ffa33d;
   --color-naranja-tinta: #a85200;  /* texto naranja sobre fondo claro (contraste 5:1) */
   --color-rojo: #cb0017;           /* rojo URJC: pertenencia; nunca fondo dominante */
-  --color-arena: #f3e6d3;          /* paneles y datos */
+
+  /* Color: neutros de apoyo */
+  --color-blanco: #ffffff;         /* tarjetas sobre papel */
+  --color-papel-2: #f4efe7;        /* secciones alternas y pie */
+  --color-tinta-2: #23243a;        /* tarjetas sobre tinta */
+  --color-tinta-3: #2d2e46;        /* campos de formulario sobre tinta */
+  --color-tinta-borde: #3d3e57;    /* bordes sobre tinta */
+  --color-pizarra: #5a5c70;        /* texto secundario sobre claro */
+  --color-linea: #e4ddd1;          /* filetes sobre papel */
+  --color-texto-claro: #c9c6d3;    /* texto secundario sobre tinta (contraste 9:1) */
+  --color-arena: #f3e6d3;          /* marcadores de foto */
   --color-arena-borde: #d9c3a3;
-  --color-pizarra: #5a5c70;        /* texto secundario */
-  --color-linea: #d9d2c5;          /* filetes sobre papel */
-  --color-linea-suave: #ece4d7;
-  --color-blanco: #ffffff;
-  --color-texto-claro: #e8e2d6;    /* texto secundario sobre tinta */
-  --color-arena-texto: #6e604c;    /* texto sobre arena (marcadores de foto) */
+  --color-arena-texto: #6e604c;
   --color-error-claro: #ff8a8a;    /* mensajes de error sobre tinta */
+  --color-cabecera: rgb(251 247 241 / 0.78); /* papel translúcido de la cabecera */
   --color-foco: var(--color-naranja-tinta); /* anillo de foco; sobre tinta se cambia a naranja */
+  --color-foco-suave: rgb(248 147 31 / 0.35); /* halo de foco en campos sobre tinta */
+
+  /* Degradados de acento (solo en titulares grandes) */
+  --degradado-marca: linear-gradient(100deg, var(--color-naranja-tinta) 10%, var(--color-rojo) 90%);
+  --degradado-marca-oscuro: linear-gradient(100deg, var(--color-naranja) 10%, var(--color-naranja-hover) 90%);
+
+  /* Sombras */
+  --sombra-tarjeta: 0 1px 2px rgb(23 24 43 / 0.04), 0 8px 24px rgb(23 24 43 / 0.06);
+  --sombra-flotante: 0 2px 6px rgb(23 24 43 / 0.06), 0 18px 40px rgb(23 24 43 / 0.10);
+  --sombra-control: 0 1px 3px rgb(23 24 43 / 0.12);
 
   /* Tipografía */
-  --font-titular: 'Libre Franklin', Arial, sans-serif;
+  --font-titular: 'Libre Franklin', -apple-system, 'Helvetica Neue', Arial, sans-serif;
   --font-texto: 'Newsreader', Georgia, serif;
 
-  --fs-xs: 0.8125rem;      /* notas mínimas */
-  --fs-caption: 0.875rem;  /* etiquetas en mayúsculas */
-  --fs-small: 0.9375rem;
-  --fs-ui: 1rem;           /* menú y datos secundarios */
+  --fs-xs: 0.75rem;        /* notas legales */
+  --fs-caption: 0.8125rem; /* etiquetas en mayúsculas */
+  --fs-small: 0.875rem;    /* menú y datos secundarios */
+  --fs-ui: 1rem;
   --fs-control: 1.0625rem; /* botones y campos */
   --fs-body: 1.125rem;
   --fs-text: 1.1875rem;    /* texto de tarjetas y páginas legales */
-  --fs-quote: 1.25rem;     /* lemas y avisos destacados */
-  --fs-intro: 1.3125rem;   /* entradillas de sección y listas destacadas */
-  --fs-lead: 1.375rem;
-  --fs-h4: 1.5rem;
-  --fs-h3: 1.625rem;
-  --fs-h3-lg: 1.875rem;
-  --fs-number: 2.5rem;     /* numerales grandes */
-  --fs-h2: clamp(2rem, 4vw, 3.25rem);
-  --fs-h1: clamp(2.75rem, 6vw, 5.25rem);
+  --fs-lead: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-h4: 1.375rem;
+  --fs-h3: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
+  --fs-number: clamp(2.75rem, 2rem + 3vw, 4.5rem); /* cifras grandes */
+  --fs-h2: clamp(2.25rem, 1.4rem + 3.6vw, 4.25rem);
+  --fs-h1: clamp(2.75rem, 1.2rem + 6.4vw, 6.5rem);
 
   --fw-regular: 400;
+  --fw-medium: 500;
   --fw-semibold: 600;
-  --fw-bold: 800;
+  --fw-bold: 700;
+  --fw-heavy: 800;
   --fw-black: 900;
 
   --lh-none: 1;
-  --lh-display: 0.98;
-  --lh-tight: 1.02;
-  --lh-snug: 1.1;
-  --lh-body: 1.5;
+  --lh-display: 1.02;
+  --lh-tight: 1.08;
+  --lh-snug: 1.2;
+  --lh-body: 1.55;
   --lh-prose: 1.6;
 
+  --tracking-display: -0.045em;
   --tracking-tight: -0.03em;
-  --tracking-snug: -0.01em;
-  --tracking-label: 0.1em;
-  --tracking-caps: 0.14em;
+  --tracking-snug: -0.015em;
+  --tracking-label: 0.08em;
+  --tracking-caps: 0.12em;
 
   /* Espacio */
   --space-1: 0.25rem;
@@ -71,16 +87,18 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 5rem;
+  --space-seccion: clamp(5rem, 3rem + 8vw, 10rem); /* respiro vertical entre secciones */
+  --space-portada: clamp(4rem, 2rem + 6vw, 9rem);  /* respiro superior de la portada */
 
   /* Forma */
-  --radius-s: 10px;
-  --radius-m: 16px;
-  --radius-l: 24px;
+  --radius-s: 12px;
+  --radius-m: 18px;
+  --radius-l: 28px;
   --radius-pill: 999px;
 
   --border-fino: 1px;
   --border-grueso: 2px;
-  --filete-cabecera: 6px;  /* filete rojo superior de la cabecera */
+  --filete-cabecera: 3px;  /* filete rojo superior de la cabecera */
   --foco-grosor: 3px;
 
   /* Controles (botones, campos, pestañas) */
@@ -88,12 +106,35 @@
   --control-h: 3rem;
   --control-pad-y: 0.875rem;
   --control-pad-y-s: 0.625rem;
+  --control-pad-x: 1.5rem;
   --control-pad-x-s: 1.125rem;
-  --control-pad-x-pill: 1.375rem;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-rapida: 0.2s;
+  --dur-media: 0.4s;
+  --dur-lenta: 0.9s;
+  --desplazamiento-entrada: 24px; /* recorrido de la animación de entrada */
 
   /* Maquetación */
-  --container: 1200px;
-  --container-narrow: 760px;
-  --gutter: 1.5rem;
-  --header-h: 4.5rem;
+  --container: 1120px;
+  --container-wide: 1280px;
+  --container-narrow: 720px;
+  --gutter: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+  --header-h: 3.5rem;
+  --blur-cabecera: 20px;
+  --nav-movil-fila: 3.25rem;      /* alto de cada enlace del menú móvil */
+  --medida-titular: 48rem;        /* ancho máximo de cabeceras de sección */
+  --medida-portada: 60rem;        /* ancho máximo del texto de portada */
+  --medida-texto: 40rem;          /* ancho máximo de párrafos destacados */
+  --tarjeta-min: 16rem;           /* ancho mínimo de tarjetas en rejilla */
+  --evento-alto: 13rem;
+  --cifra-min: 8.5rem;            /* ancho mínimo de cada cifra (2 columnas en móvil) */
+
+  /* Iconos y piezas pequeñas */
+  --sello-cabecera: 2rem;
+  --icono-menu: 1.125rem;
+  --icono-menu-sep: 7px;          /* separación entre las dos rayas del botón de menú */
+  --check-size: 1.25rem;
+  --punto: 0.5rem;                /* viñeta circular de las listas */
 }

@@ -10,19 +10,30 @@ h1, h2, h3 {
   font-weight: var(--fw-bold);
   letter-spacing: var(--tracking-tight);
   line-height: var(--lh-tight);
+  text-wrap: balance;
 }
 
-p { margin: 0; }
+p { margin: 0; text-wrap: pretty; }
 
-a { color: var(--color-naranja-tinta); }
+a { color: var(--color-naranja-tinta); text-underline-offset: 0.18em; }
 a:hover { color: var(--color-tinta); }
 
+/* Etiqueta pequeña sobre los titulares de sección */
 .eyebrow {
-  font-size: var(--fs-small);
+  font-size: var(--fs-caption);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
   color: var(--color-naranja-tinta);
+}
+
+/* Texto con el degradado de marca (solo en titulares grandes) */
+.text-marca {
+  color: var(--color-naranja-tinta);
+  background: var(--degradado-marca);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .prose {

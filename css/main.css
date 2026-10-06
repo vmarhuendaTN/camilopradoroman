@@ -1,15 +1,16 @@
 /*
   Punto de entrada de los estilos. El orden importa: de lo general a lo particular.
-  Para añadir una sección nueva: crea css/sections/mi-seccion.css e impórtala al final.
+  Para añadir una sección nueva: crea css/sections/mi-seccion.css e impórtala al final del bloque 5.
 */
 
 /* 1. Ajustes: variables de marca */
 @import url('settings/tokens.css');
 
-/* 2. Base: reinicio, tipografía y utilidades */
+/* 2. Base: reinicio, tipografía, utilidades y movimiento */
 @import url('base/reset.css');
 @import url('base/typography.css');
 @import url('base/utilities.css');
+@import url('base/motion.css');
 
 /* 3. Estructura compartida */
 @import url('layout/header.css');

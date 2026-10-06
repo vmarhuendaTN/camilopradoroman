@@ -1,36 +1,68 @@
-/* Encuentros por campus (se pintan desde data/encuentros.json con js/modules/encuentros.js). */
+/*
+  Encuentros por campus (js/modules/encuentros.js con data/encuentros.json).
+  En móvil, carrusel horizontal con imán; en pantallas grandes, rejilla.
+*/
 .events {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(var(--tarjeta-min), 80%);
   gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+  padding-bottom: var(--space-3);
+  scrollbar-width: none;
+}
+.events::-webkit-scrollbar { display: none; }
+
+@media (min-width: 761px) {
+  .events {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(var(--tarjeta-min), 1fr));
+    overflow: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
 }
 
 .event {
-  background: var(--color-papel);
-  border-radius: var(--radius-m);
-  padding: var(--space-5);
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
+  min-height: var(--evento-alto);
+  padding: var(--space-6);
+  background: var(--color-blanco);
+  border-radius: var(--radius-l);
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform var(--dur-media) var(--ease-out), box-shadow var(--dur-media) var(--ease-out);
 }
+.event:hover { transform: translateY(calc(var(--space-1) * -1)); box-shadow: var(--sombra-flotante); }
 
 .event__when {
   font-size: var(--fs-caption);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-semibold);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--color-naranja-tinta);
 }
 
-.event__campus { font-size: var(--fs-h4); letter-spacing: var(--tracking-snug); }
+.event__campus {
+  margin-top: auto;
+  font-size: var(--fs-h3);
+  letter-spacing: var(--tracking-tight);
+}
 
-.event__place { font-size: var(--fs-ui); color: var(--color-pizarra); }
+.event__place { font-size: var(--fs-small); color: var(--color-pizarra); }
 
 .events__empty {
   grid-column: 1 / -1;
   font-family: var(--font-texto);
-  font-size: var(--fs-quote);
+  font-size: var(--fs-lead);
+  color: var(--color-pizarra);
 }
