@@ -33,9 +33,9 @@
 }
 .stat dd {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: var(--fs-h4);
   font-weight: var(--fw-black);
-  line-height: 1.1;
+  line-height: var(--lh-snug);
   color: var(--color-rojo);
 }
 .stat dt { font-size: var(--fs-small); color: var(--color-pizarra); }

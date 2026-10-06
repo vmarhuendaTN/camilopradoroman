@@ -98,7 +98,7 @@ Añade un bloque a `data/encuentros.json` con `date`, `time`, `campus`, `place` 
 Pega la dirección de Formspree en `formEndpoint` de `js/config.js` y nombra el servicio en `privacidad.html`.
 
 ### Conectar el dominio
-`CNAME.example` → `CNAME` con el dominio dentro; actualiza las URL de `robots.txt` y `sitemap.xml`. Sin dominio propio, `404.html` necesita el prefijo `/<repo>` en sus rutas.
+`CNAME.example` → `CNAME` con el dominio dentro; actualiza las URL de `robots.txt` y `sitemap.xml`. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
 
 ## Reglas de marca (brandbook)
 

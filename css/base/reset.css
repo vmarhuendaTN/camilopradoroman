@@ -29,6 +29,6 @@ button, input, select, textarea { font: inherit; }
 [hidden] { display: none !important; }
 
 :focus-visible {
-  outline: 3px solid var(--color-naranja);
-  outline-offset: 3px;
+  outline: var(--foco-grosor) solid var(--color-foco);
+  outline-offset: var(--foco-grosor);
 }

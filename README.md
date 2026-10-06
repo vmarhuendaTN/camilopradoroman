@@ -5,10 +5,10 @@ Web estática de la candidatura de Camilo Prado al decanato de la Facultad de Ci
 ## Estructura
 
 ```
-pradodecano-web/
+camilopradoroman/
 ├── index.html               Portada: todas las secciones, marcadas con comentarios
 ├── privacidad.html          Política de privacidad
-├── 404.html                 Página de error
+├── 404.html                 Página de error (calcula sola la base de sus rutas)
 ├── partials/
 │   ├── header.html          Cabecera común (se edita una vez para todas las páginas)
 │   └── footer.html          Pie común
@@ -29,6 +29,7 @@ pradodecano-web/
 │   ├── logo/                Sello CP (principal, inversa, favicon)
 │   ├── img/                 Fotografías
 │   └── docs/                PDF del programa y otros descargables
+├── .nojekyll                Indica a GitHub Pages que publique los archivos tal cual
 ├── robots.txt
 └── sitemap.xml
 ```
@@ -76,18 +77,18 @@ GitHub Pages no ejecuta código de servidor, así que los mensajes se envían a 
 ## Añadir una sección nueva
 
 1. Copia en `index.html` el bloque de una sección parecida, con su comentario `====`.
-2. Crea `css/sections/mi-seccion.css` y añade `@import url('sections/mi-seccion.css');` al final de `css/main.css`.
+2. Crea `css/sections/mi-seccion.css` y añade `@import url('sections/mi-seccion.css');` al final del bloque 5 de `css/main.css`.
 3. Si necesita comportamiento, crea `js/modules/mi-modulo.js` con una función `initMiModulo()` e invócala en `js/main.js`.
 4. Si debe aparecer en el menú, añade el enlace en `partials/header.html` con la forma `./#mi-seccion`.
 
-Regla: nada de colores ni tamaños sueltos. Usa siempre las variables de `tokens.css`.
+Regla: nada de colores, tamaños, interlineados ni bordes sueltos. Usa siempre las variables de `tokens.css`; si falta una, créala allí con un comentario.
 
 ## Ver la web en local
 
 La web carga archivos con `fetch` (parciales y encuentros), así que hay que abrirla con un servidor, no con doble clic:
 
 ```bash
-cd pradodecano-web
+cd camilopradoroman
 python3 -m http.server 8000
 # abre http://localhost:8000
 ```
@@ -96,9 +97,9 @@ También sirve la extensión Live Server de VS Code.
 
 ## Publicar en GitHub Pages
 
-1. Crea un repositorio en GitHub (por ejemplo, `pradodecano-web`) y sube el contenido de esta carpeta a la rama `main`.
+1. El repositorio es `camilopradoroman`; lo que se sube a la rama `main` es lo que se publica.
 2. En el repositorio: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)`.
-3. En un par de minutos la web estará en `https://<usuario>.github.io/pradodecano-web/`.
+3. En un par de minutos la web estará en `https://<usuario>.github.io/camilopradoroman/`.
 
 Cada cambio que se suba a `main` se publica solo.
 
@@ -109,7 +110,7 @@ Cada cambio que se suba a `main` se publica solo.
 3. En el proveedor del dominio, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain** y activa **Enforce HTTPS**.
 4. Actualiza la URL en `sitemap.xml` y `robots.txt`.
 
-Con dominio propio la página 404 funciona tal cual. Sin dominio, añade `/pradodecano-web` delante de las rutas de `404.html`.
+La página 404 funciona igual con dominio propio y sin él: calcula sola la base de sus rutas.
 
 ## Reglas de marca
 
