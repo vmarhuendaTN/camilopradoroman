@@ -113,7 +113,7 @@ Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra
 
 - Tipografías: **Libre Franklin** (titulares e interfaz; 800–900, cursiva negra en el logotipo) y **Newsreader** (texto largo y citas).
 - Logotipo: sello circular con las iniciales CP en cursiva y una fina línea roja desplazada. Usa los SVG de `assets/logo/`; no lo redibujes ni cambies sus colores.
-- Eslóganes: «Una Facultad que se mide por su impacto.» (paraguas) · «Tu título, con más valor.» (estudiantes) · «Escuchar primero. Decidir con datos.» (llamada a la acción).
+- Eslóganes: «Aquí se viene a crecer.» (paraguas) · «Tu título, con más valor.» (estudiantes) · «Escuchar primero. Decidir con datos.» (llamada a la acción).
 - Tono: tuteo, frases cortas, cada promesa con su medida y su indicador. Nada de memes, emojis en titulares, críticas al equipo saliente ni a otras candidaturas.
 - Accesibilidad: contraste mínimo 4,5:1 en texto, objetivos táctiles de 44 px, foco visible, `alt` en todas las imágenes.
 

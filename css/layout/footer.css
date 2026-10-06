@@ -1,19 +1,29 @@
-/* Pie de página (partials/footer.html). */
+/* Pie de página (partials/footer.html): discreto, letra pequeña, sobre papel. */
 .footer {
-  background: var(--color-tinta);
-  color: var(--color-texto-claro);
-  padding-block: var(--space-7);
-  --color-foco: var(--color-naranja);
+  background: var(--color-papel-2);
+  color: var(--color-pizarra);
+  padding-block: var(--space-7) var(--space-6);
+  font-size: var(--fs-small);
 }
 
 .footer__inner { display: flex; flex-direction: column; gap: var(--space-5); }
 
-.footer__brand { display: flex; align-items: center; gap: var(--space-4); }
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  padding-bottom: var(--space-5);
+  border-bottom: var(--border-fino) solid var(--color-linea);
+}
+
+.footer__brand { display: flex; align-items: center; gap: var(--space-3); }
 .footer__brand p {
   font-family: var(--font-texto);
-  font-size: var(--fs-quote);
+  font-size: var(--fs-text);
   font-style: italic;
-  color: var(--color-papel);
+  color: var(--color-tinta);
 }
 
 .footer__social {
@@ -22,24 +32,25 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2) var(--space-5);
+  gap: 0 var(--space-5);
 }
 .footer__social a {
   display: inline-flex;
   align-items: center;
   min-height: var(--tap-min);
-  color: var(--color-naranja);
-  font-weight: var(--fw-semibold);
+  color: var(--color-tinta);
+  font-weight: var(--fw-medium);
   text-decoration: none;
 }
-.footer__social a:hover { color: var(--color-papel); }
+.footer__social a:hover { color: var(--color-naranja-tinta); }
 
 .footer__legal {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  font-size: var(--fs-small);
-  border-top: var(--border-fino) solid var(--color-tinta-2);
-  padding-top: var(--space-5);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-body);
 }
-.footer__legal a { color: var(--color-texto-claro); }
+.footer__legal a { color: var(--color-pizarra); }
+.footer__legal a:hover { color: var(--color-tinta); }

@@ -1,45 +1,74 @@
-/* Tarjetas de compromiso (sección Programa). */
+/* Tarjetas de compromiso (sección Programa), en rejilla tipo mosaico sobre tinta. */
 .cards {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-4);
+  counter-reset: compromiso;
 }
 
 .card {
-  background: var(--color-tinta-2);
-  border-radius: var(--radius-l);
-  padding: var(--space-6);
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
+  padding: clamp(var(--space-5), 3vw, var(--space-6));
+  background: var(--color-tinta-2);
+  border: var(--border-fino) solid var(--color-tinta-borde);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  transition: transform var(--dur-media) var(--ease-out), border-color var(--dur-media) var(--ease-out);
+}
+.card:hover { transform: translateY(calc(var(--space-1) * -1)); border-color: var(--color-naranja); }
+
+/* Filete de acento en la parte superior */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: var(--filete-cabecera);
+  background: var(--degradado-marca-oscuro);
 }
 
 .card__number {
-  font-size: var(--fs-number);
-  font-weight: var(--fw-black);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-caps);
   color: var(--color-naranja);
-  line-height: var(--lh-none);
 }
 
-.card__title { font-size: var(--fs-h3); }
+.card__title {
+  font-size: var(--fs-h3);
+  letter-spacing: var(--tracking-tight);
+}
 
 .card__text,
-.card__list,
-.card__indicator {
+.card__list {
   font-family: var(--font-texto);
   font-size: var(--fs-text);
+  line-height: var(--lh-snug);
   color: var(--color-texto-claro);
 }
 
-.card__list { margin: 0; padding-left: 1.2em; }
+.card__list { margin: 0; padding-left: var(--space-5); display: grid; gap: var(--space-1); }
+.card__list li::marker { color: var(--color-naranja); }
 
 .card__indicator {
   margin-top: auto;
+  padding-top: var(--space-4);
   border-top: var(--border-fino) solid var(--color-tinta-borde);
-  padding-top: var(--space-3);
-  font-size: var(--fs-control);
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  color: var(--color-texto-claro);
 }
-.card__indicator strong { font-family: var(--font-titular); color: var(--color-papel); }
+.card__indicator strong {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-papel);
+}

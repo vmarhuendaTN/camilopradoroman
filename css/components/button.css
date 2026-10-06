@@ -1,28 +1,61 @@
-/* Botones. Variantes: .btn--primario (naranja), .btn--secundario (borde), .btn--oscuro (tinta). */
+/*
+  Botones en píldora. Variantes:
+  .btn--primario (tinta), .btn--acento (naranja, sobre fondos oscuros),
+  .btn--secundario (borde) y .link-flecha (enlace de texto con flecha).
+*/
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-2);
   min-height: var(--control-h);
-  padding: var(--control-pad-y) var(--space-5);
-  border: 0;
-  border-radius: var(--radius-s);
+  padding: var(--control-pad-y-s) var(--control-pad-x);
+  border: var(--border-fino) solid transparent;
+  border-radius: var(--radius-pill);
   font-family: var(--font-titular);
   font-size: var(--fs-control);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-snug);
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color var(--dur-rapida) var(--ease-out),
+    color var(--dur-rapida) var(--ease-out),
+    border-color var(--dur-rapida) var(--ease-out),
+    transform var(--dur-rapida) var(--ease-out);
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: scale(0.98); }
 
-.btn--primario { background: var(--color-naranja); color: var(--color-tinta); }
-.btn--primario:hover { background: var(--color-naranja-hover); color: var(--color-tinta); }
+.btn--primario { background: var(--color-tinta); color: var(--color-papel); }
+.btn--primario:hover { background: var(--color-tinta-2); color: var(--color-papel); }
 
-.btn--secundario { border: var(--border-grueso) solid var(--color-tinta); color: var(--color-tinta); }
+.btn--acento { background: var(--color-naranja); color: var(--color-tinta); }
+.btn--acento:hover { background: var(--color-naranja-hover); color: var(--color-tinta); }
+
+.btn--secundario { border-color: var(--color-tinta); color: var(--color-tinta); }
 .btn--secundario:hover { background: var(--color-tinta); color: var(--color-papel); }
-
-.btn--oscuro { background: var(--color-tinta); color: var(--color-papel); }
-.btn--oscuro:hover { background: var(--color-tinta-2); color: var(--color-papel); }
+.section--tinta .btn--secundario { border-color: var(--color-texto-claro); color: var(--color-papel); }
+.section--tinta .btn--secundario:hover { background: var(--color-papel); color: var(--color-tinta); }
 
 .btn[disabled] { opacity: 0.6; cursor: wait; transform: none; }
+
+/* Enlace de texto con flecha, al estilo de las llamadas secundarias */
+.link-flecha {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--tap-min);
+  font-size: var(--fs-control);
+  font-weight: var(--fw-semibold);
+  color: var(--color-naranja-tinta);
+  text-decoration: none;
+}
+.link-flecha::after {
+  content: '›';
+  font-size: 1.3em;
+  line-height: var(--lh-none);
+  transition: transform var(--dur-rapida) var(--ease-out);
+}
+.link-flecha:hover { color: var(--color-naranja-tinta); text-decoration: underline; }
+.link-flecha:hover::after { transform: translateX(var(--space-1)); }
+.section--tinta .link-flecha { color: var(--color-naranja); }

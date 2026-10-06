@@ -1,0 +1,21 @@
+/*
+  Aparición suave al hacer scroll (js/modules/reveal.js).
+  Solo se activa si el módulo añade .js-reveal a <html>: sin JavaScript todo se ve.
+*/
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--desplazamiento-entrada));
+  transition:
+    opacity var(--dur-lenta) var(--ease-out),
+    transform var(--dur-lenta) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.js-reveal [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal [data-reveal] { opacity: 1; transform: none; }
+}

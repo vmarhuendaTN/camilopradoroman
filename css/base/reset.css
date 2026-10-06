@@ -9,17 +9,25 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + var(--space-4));
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 body {
   margin: 0;
   background: var(--color-papel);
   color: var(--color-tinta);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
 img, svg { max-width: 100%; display: block; }
@@ -32,3 +40,5 @@ button, input, select, textarea { font: inherit; }
   outline: var(--foco-grosor) solid var(--color-foco);
   outline-offset: var(--foco-grosor);
 }
+
+::selection { background: var(--color-naranja); color: var(--color-tinta); }

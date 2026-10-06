@@ -2,13 +2,15 @@
 // y después activa cada módulo. Para añadir comportamiento nuevo: crea un archivo en
 // js/modules/, expórtale una función init y añádela a la lista de abajo.
 import { loadIncludes } from './modules/include.js';
+import { initNav } from './modules/nav.js';
+import { initReveal } from './modules/reveal.js';
 import { initTabs } from './modules/tabs.js';
 import { initEncuentros } from './modules/encuentros.js';
 import { initContactForm } from './modules/contact-form.js';
 import { initPhotos } from './modules/photos.js';
 import { initYear } from './modules/year.js';
 
-const modules = [initYear, initPhotos, initTabs, initContactForm, initEncuentros];
+const modules = [initNav, initReveal, initYear, initPhotos, initTabs, initContactForm, initEncuentros];
 
 async function start() {
   await loadIncludes();

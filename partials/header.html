@@ -1,12 +1,15 @@
 <!-- Cabecera de todas las páginas. Los enlaces "./#…" funcionan desde cualquier página. -->
 <header class="header">
-  <div class="container header__inner">
+  <div class="container container--wide header__inner">
     <a class="header__brand" href="./">
-      <img class="sello" src="assets/logo/sello-principal.svg" alt="" width="40" height="40">
+      <img class="sello" src="assets/logo/sello-principal.svg" alt="" width="32" height="32">
       <span>Camilo Prado</span>
     </a>
+    <button class="header__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Menú">
+      <span class="header__toggle-icon" aria-hidden="true"></span>
+    </button>
     <nav aria-label="Principal">
-      <ul class="header__nav">
+      <ul class="header__nav" id="menu-principal">
         <li><a href="./#programa">Programa</a></li>
         <li><a href="./#para-ti">Para ti</a></li>
         <li><a href="./#encuentros">Encuentros</a></li>

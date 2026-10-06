@@ -44,7 +44,7 @@ camilopradoroman/
 | Añadir o quitar un encuentro | `data/encuentros.json` |
 | Cambiar un color o una tipografía | `css/settings/tokens.css` |
 | Activar el formulario | `js/config.js` (ver «Formulario») |
-| Poner las fotos | Subir a `assets/img/` con estos nombres: `camilo-prado-hero.jpg` (vertical 4:5) y `camilo-prado-retrato.jpg` (cuadrada) |
+| Poner las fotos | Subir a `assets/img/` con estos nombres: `camilo-prado-hero.jpg` (horizontal 16:9) y `camilo-prado-retrato.jpg` (vertical 4:5); detalles en `assets/img/LEEME.md` |
 | Publicar el programa | Subir `assets/docs/programa-camilo-prado.pdf` |
 | Imagen al compartir en redes | Subir `assets/img/og-image.png` (1200 × 630) |
 

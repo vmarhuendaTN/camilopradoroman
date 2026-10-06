@@ -1,23 +1,38 @@
 /* Envoltorio común de sección: fondos, espaciado y cabecera. */
-.section { padding-block: var(--space-8); }
+.section { padding-block: var(--space-seccion); }
+
+.section--papel-2 { background: var(--color-papel-2); }
 
 .section--tinta {
   background: var(--color-tinta);
   color: var(--color-papel);
   --color-foco: var(--color-naranja);
 }
-.section--arena { background: var(--color-arena); color: var(--color-tinta); }
+.section--tinta .eyebrow { color: var(--color-naranja); }
+.section--tinta .text-marca { color: var(--color-naranja); background-image: var(--degradado-marca-oscuro); }
 
-.section__inner { display: flex; flex-direction: column; gap: var(--space-6); }
+.section__inner { display: flex; flex-direction: column; gap: var(--space-7); }
 
-.section__header { display: flex; flex-direction: column; gap: var(--space-3); }
+.section__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: var(--medida-titular);
+}
+.section__header--center { align-items: center; text-align: center; margin-inline: auto; }
 
-.section__title { font-size: var(--fs-h2); }
+.section__title {
+  font-size: var(--fs-h2);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--lh-display);
+}
 
 .section__intro {
   font-family: var(--font-texto);
-  font-size: var(--fs-intro);
-  max-width: 40rem;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-snug);
   color: var(--color-pizarra);
 }
 .section--tinta .section__intro { color: var(--color-texto-claro); }
+
+.section__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3) var(--space-5); }
