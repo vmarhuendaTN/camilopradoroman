@@ -39,3 +39,39 @@
   color: var(--color-rojo);
 }
 .stat dt { font-size: var(--fs-small); color: var(--color-pizarra); }
+
+/* Currículum y perfiles de investigador */
+.profiles { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.profiles__title { font-size: var(--fs-quote); }
+
+.profiles__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-2);
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: var(--tap-min);
+  height: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-fino) solid var(--color-linea);
+  border-radius: var(--radius-s);
+  background: var(--color-blanco);
+  color: var(--color-tinta);
+  text-decoration: none;
+}
+.profile:hover { border-color: var(--color-naranja-tinta); color: var(--color-tinta); }
+
+.profile__name { font-size: var(--fs-ui); font-weight: var(--fw-bold); }
+.profile__id {
+  font-size: var(--fs-small);
+  color: var(--color-pizarra);
+  overflow-wrap: anywhere;
+}
