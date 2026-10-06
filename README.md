@@ -100,13 +100,13 @@ También sirve la extensión Live Server de VS Code.
 
 1. El repositorio es `camilopradoroman`; lo que se sube a la rama `main` es lo que se publica.
 2. En el repositorio: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)`.
-3. En un par de minutos la web estará en `https://<usuario>.github.io/camilopradoroman/`.
+3. En un par de minutos la web estará en https://vmarhuendatn.github.io/camilopradoroman/ (el progreso se ve en la pestaña **Actions**).
 
 Cada cambio que se suba a `main` se publica solo.
 
 ### Dominio propio
 
-La dirección principal será `www.camilopradoroman.com` (GitHub Pages admite un solo dominio). Mientras no esté configurado, la web se ve en `https://<usuario>.github.io/camilopradoroman/`.
+La dirección principal será `www.camilopradoroman.com` (GitHub Pages admite un solo dominio). Mientras no esté configurado, la web se ve en https://vmarhuendatn.github.io/camilopradoroman/.
 
 1. Cuando el DNS esté listo, renombra `CNAME.example` a `CNAME` (ya contiene el dominio). Hazlo después del DNS: con `CNAME` publicado, GitHub redirige al dominio y, si este no responde, la web deja de verse.
 2. En el proveedor del dominio `.com`, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain**: un `CNAME` de `www` hacia `<usuario>.github.io` y los registros `A` del dominio raíz. Después activa **Enforce HTTPS**.
