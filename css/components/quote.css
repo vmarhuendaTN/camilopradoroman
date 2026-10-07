@@ -1,4 +1,4 @@
-/* Citas destacadas del programa (Newsreader, como marca el brandbook para las citas). */
+/* Citas destacadas del programa. */
 .cita {
   margin: 0 auto;
   max-width: var(--medida-cita);
@@ -13,7 +13,7 @@
 .cita__texto p {
   font-family: var(--font-texto);
   font-size: var(--fs-cita);
-  font-style: italic;
+  font-weight: var(--fw-medium);
   line-height: var(--lh-snug);
   letter-spacing: var(--tracking-snug);
   color: var(--color-tinta);

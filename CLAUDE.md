@@ -8,7 +8,7 @@ Web estática de la candidatura del Dr. Camilo Prado Román (catedrático de Eco
 
 - Quien vota es la Junta de Facultad (PDI, PTGAS y representantes de estudiantes). La web construye reputación y recoge propuestas; el voto se gana en persona.
 - Se publica en GitHub Pages desde la rama `main`, carpeta raíz. Cada push a `main` se publica solo (en uno o dos minutos; se sigue en la pestaña **Actions**).
-- Dirección actual: https://vmarhuendatn.github.io/camilopradoroman/ (hasta conectar el dominio, ver «Dominio»).
+- Dirección: https://www.camilopradoroman.es/ (dominio en el archivo `CNAME`; ver «Dominio»).
 - Responsable del proyecto: Victoria Marhuenda (comunicación de la campaña).
 
 Idioma: todo el contenido, los comentarios de código y los mensajes de commit van en **español**.
@@ -90,7 +90,7 @@ Orden de secciones en `index.html` y fondo de cada una (alternan papel y papel 2
 - HTML semántico: `section` con `aria-labelledby`, encabezados en orden (un solo `h1` por página).
 - Cabecera y pie solo en `partials/`; las páginas los insertan con `<div data-include="partials/…"></div>`.
 - Enlaces del menú con la forma `./#seccion`, para que funcionen desde cualquier página.
-- Fotos con `data-placeholder="…"`: si falta el archivo, `js/modules/photos.js` muestra un recuadro con instrucciones. Portada horizontal 16:9 (en móvil se recorta a 4:5 por el centro); retrato vertical 4:5.
+- Fotos con `data-placeholder="…"`: si falta el archivo, `js/modules/photos.js` muestra un recuadro con instrucciones. Portada horizontal 3:2, se ve entera en escritorio (en móvil se recorta a 4:5 por el centro); retrato 2:3 en un hueco 4:5, recortado por abajo (`.photo--retrato`).
 - `data-reveal` en un bloque lo hace aparecer suavemente al hacer scroll; `data-reveal-stagger` en un contenedor anima sus hijos en cascada. Sin JavaScript o con «reducir movimiento», todo se ve sin animar.
 - Etiqueta pequeña sobre cada `h2`: `<p class="eyebrow">Nombre de la sección</p>`. Palabra destacada con degradado de marca: `<span class="text-marca">…</span>` (solo en titulares grandes y con mesura).
 - Huecos pendientes entre corchetes y en mayúsculas: `[MEDIDA]`, `[FECHA]`, `[ID-FORMULARIO]`. Nunca inventes datos para rellenarlos.
@@ -126,11 +126,11 @@ Copia `privacidad.html` (mantiene parciales, fuentes, estilos y scripts), cambia
 ### Añadir un encuentro
 Añade un bloque a `data/encuentros.json` con `date`, `time`, `campus`, `place` y `format`.
 
-### Activar el formulario
-Pega la dirección de Formspree en `formEndpoint` de `js/config.js` y nombra el servicio en `privacidad.html`.
+### Formulario de contacto
+Ya está activo: el formulario envía con FormSubmit (`formEndpoint` de `js/config.js`) a `hola@camilopradoroman.es`, el correo de campaña, que también aparece bajo el formulario, en el pie y en `privacidad.html`. La primera vez hay que pulsar el enlace del correo de activación que manda FormSubmit. Si cambia el correo, cámbialo en esos cuatro sitios.
 
 ### Dominio
-Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra a `CNAME` cuando el DNS esté configurado (antes, la web se ve en `github.io/camilopradoroman`). `camilopradoroman.es` redirige a él desde el proveedor del dominio. Mientras tanto, `canonical`, las etiquetas `og:`/`twitter:` de `index.html`, `robots.txt` y `sitemap.xml` apuntan a `https://vmarhuendatn.github.io/camilopradoroman/`; al activar el dominio (o si cambia) hay que cambiarlas todas a la dirección nueva. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
+Activo: `www.camilopradoroman.es` (archivo `CNAME`). `canonical`, las etiquetas `og:`/`twitter:` de `index.html`, `robots.txt` y `sitemap.xml` usan `https://www.camilopradoroman.es/`. Si se cambia de dominio (por ejemplo a `.com`), hay que cambiar el `CNAME` y todas esas direcciones a la vez, y configurar en el proveedor la redirección del dominio que quede secundario. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
 
 ## Reglas de marca (brandbook)
 
@@ -143,9 +143,10 @@ Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra
 | Naranja tinta #A85200 | `--color-naranja-tinta` | Texto naranja sobre fondo claro |
 
 - **Criterio visual (tipo app, sobrio):** fondos siempre claros (papel, papel 2 y tarjetas blancas con filete finísimo y sombra suave); texto en tinta. El color de marca **solo destaca, nunca es fondo**: cifras en rojo, numerales y etiquetas en naranja tinta, viñetas y filetes cortos en naranja, filete rojo fino de la cabecera y degradado naranja→rojo en la palabra clave del titular. Mucho aire, titulares grandes y compactos, botones en píldora.
-- Tipografías (no cambiarlas ni sus reservas):
-  - **Libre Franklin** (`--font-titular`): titulares, menú, botones, etiquetas, cifras y textos breves de interfaz (formulario, pie, perfiles). Cursiva negra en el logotipo.
-  - **Newsreader** (`--font-texto`): todo el texto largo — entradillas, párrafos, resúmenes de las líneas, **listas de medidas** (`.lista`), textos de compromisos y citas.
+- Tipografía (decisión de la campaña, octubre de 2026): **Libre Franklin en toda la web**; no cambiarla ni sus reservas.
+  - Titulares (`--font-titular`): pesos 700–900, interletrado ajustado. Cursiva negra en el logotipo.
+  - Texto largo (`--font-texto`, también Libre Franklin): entradillas, párrafos, resúmenes, listas de medidas, compromisos y citas, en peso normal (citas en peso medio, sin cursiva).
+  - Newsreader ya no se usa ni se carga; no la reintroduzcas sin que se pida.
 - Logotipo: sello circular con las iniciales CP en cursiva y una fina línea roja desplazada. Usa los SVG de `assets/logo/`; no lo redibujes ni cambies sus colores.
 - Eslóganes: «Aquí se viene a crecer.» (paraguas) · «Tu título, con más valor.» (estudiantes) · «Escuchar primero. Decidir con datos.» (llamada a la acción).
 - Tono: tuteo, frases cortas, cada promesa con su medida y su indicador. Nada de memes, emojis en titulares, críticas al equipo saliente ni a otras candidaturas.
@@ -165,13 +166,14 @@ Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra
 2. Revisar al menos a 320, 390, 768, 1366 y 1920 px de ancho, y un móvil en horizontal (844 × 390): sin scroll horizontal, nada fuera de pantalla y con la cabecera y el pie cargados.
 3. Consola del navegador sin errores, salvo los 404 de fotos o del PDF pendientes de subir.
 4. Si se ha tocado: probar las pestañas con teclado (flechas), el menú móvil (abrir, cerrar con Escape), los desplegables de medidas, el envío del formulario y la lista de encuentros.
-5. Comprobar que el texto largo sale en Newsreader y los titulares en Libre Franklin.
+5. Comprobar que toda la web sale en Libre Franklin (y que no se carga Newsreader).
 
 ## Contexto de la campaña (fuera del repositorio)
 
 - Plan de comunicación y brandbook definitivos: documento compartido de la campaña (pestañas «Plan de comunicación» y «Brandbook»).
 - Piezas de diseño (logo, posts, story, carrusel, maqueta web): lienzo de diseño de la campaña.
-- Pendiente de confirmar: fechas electorales, visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal y canal de WhatsApp.
-- Pendiente de subir o configurar: PDF del programa, dirección de Formspree, enlace del canal de WhatsApp y DNS del dominio.
+- Pendiente de confirmar: fechas electorales, visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, y equipo decanal.
+- Pendiente de subir o configurar: PDF del programa y activación de FormSubmit (enlace del primer correo).
+- No hay canal de WhatsApp: no lo añadas.
 - Erratas detectadas en el programa v1 (corregidas en la web, no en el Word): «intencionales» → «internacionales», «Postgrados» → «Posgrados», «EULIST» → «EULiST», paréntesis sin cerrar en la medida del TFG; «cambios normativos (RD)» no indica qué Real Decreto.
-- Confirmado: dominio `www.camilopradoroman.com` (y `.es`), Instagram `@cpradoroman`, LinkedIn y perfiles de investigador.
+- Confirmado: dominio activo `www.camilopradoroman.es` (también registrado `.com`), Instagram `@cpradoroman`, LinkedIn y perfiles de investigador.

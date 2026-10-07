@@ -44,7 +44,7 @@ camilopradoroman/
 | Añadir o quitar un encuentro | `data/encuentros.json` |
 | Cambiar un color o una tipografía | `css/settings/tokens.css` |
 | Activar el formulario | `js/config.js` (ver «Formulario») |
-| Poner las fotos | Subir a `assets/img/` con estos nombres: `camilo-prado-hero.jpg` (horizontal 16:9) y `camilo-prado-retrato.jpg` (vertical 4:5); detalles en `assets/img/LEEME.md` |
+| Poner las fotos | Subir a `assets/img/` con estos nombres: `camilo-prado-hero.jpg` (horizontal 3:2) y `camilo-prado-retrato.jpg` (vertical 4:5); detalles en `assets/img/LEEME.md` |
 | Publicar el programa | Subir `assets/docs/programa-camilo-prado.pdf` |
 | Imagen al compartir en redes | `assets/img/og-image.jpg` (1200 × 630, menos de 300 KB) |
 
@@ -68,12 +68,11 @@ La fecha va en formato AAAA-MM-DD. La web los ordena por fecha y oculta sola los
 
 ### Formulario
 
-GitHub Pages no ejecuta código de servidor, así que los mensajes se envían a [Formspree](https://formspree.io) (plan gratuito):
+GitHub Pages no ejecuta código de servidor, así que los mensajes se envían con [FormSubmit](https://formsubmit.co) (gratuito, sin cuenta) a `hola@camilopradoroman.es`:
 
-1. Crea una cuenta con el correo de la campaña y un formulario nuevo.
-2. Copia su dirección (`https://formspree.io/f/xxxxxxx`).
-3. Pégala en `formEndpoint` dentro de `js/config.js`.
-4. Indica el servicio en `privacidad.html`.
+1. La dirección ya está en `formEndpoint` de `js/config.js` (`https://formsubmit.co/ajax/hola@camilopradoroman.es`).
+2. La primera vez que alguien envíe el formulario, FormSubmit manda a `hola@camilopradoroman.es` un correo de activación: pulsa su enlace. Desde entonces, cada mensaje llega a ese buzón.
+3. Para cambiar el correo de destino, cámbialo en `js/config.js`, en `index.html` (texto bajo el formulario), en `partials/footer.html` y en `privacidad.html`.
 
 ## Añadir una sección nueva
 
@@ -100,24 +99,23 @@ También sirve la extensión Live Server de VS Code.
 
 1. El repositorio es `camilopradoroman`; lo que se sube a la rama `main` es lo que se publica.
 2. En el repositorio: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)`.
-3. En un par de minutos la web estará en https://vmarhuendatn.github.io/camilopradoroman/ (el progreso se ve en la pestaña **Actions**).
+3. En un par de minutos la web estará en https://www.camilopradoroman.es/ (el progreso se ve en la pestaña **Actions**).
 
 Cada cambio que se suba a `main` se publica solo.
 
 ### Dominio propio
 
-La dirección principal será `www.camilopradoroman.com` (GitHub Pages admite un solo dominio). Mientras no esté configurado, la web se ve en https://vmarhuendatn.github.io/camilopradoroman/.
+La web se publica en `www.camilopradoroman.es` (archivo `CNAME`; GitHub Pages admite un solo dominio). Sin `CNAME`, se vería en https://vmarhuendatn.github.io/camilopradoroman/.
 
-1. Cuando el DNS esté listo, renombra `CNAME.example` a `CNAME` (ya contiene el dominio). Hazlo después del DNS: con `CNAME` publicado, GitHub redirige al dominio y, si este no responde, la web deja de verse.
-2. En el proveedor del dominio `.com`, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain**: un `CNAME` de `www` hacia `<usuario>.github.io` y los registros `A` del dominio raíz. Después activa **Enforce HTTPS**.
-3. En el proveedor del dominio `.es`, configura una redirección permanente (301) de `camilopradoroman.es` y `www.camilopradoroman.es` a `https://www.camilopradoroman.com`.
-4. Si algún día cambia el dominio, actualízalo en `CNAME`, `sitemap.xml`, `robots.txt` y en las etiquetas `canonical` y `og:` de `index.html`.
+1. En el proveedor del dominio, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain** (un `CNAME` de `www` hacia `<usuario>.github.io` y los registros `A` del dominio raíz) y activa **Enforce HTTPS**.
+2. Si queréis usar también `camilopradoroman.com`, configúralo en su proveedor como redirección permanente (301) a `https://www.camilopradoroman.es`.
+3. Si algún día cambia el dominio, actualízalo a la vez en `CNAME`, `sitemap.xml`, `robots.txt` y en las etiquetas `canonical`, `og:` y `twitter:` de `index.html`.
 
 La página 404 funciona igual con dominio propio y sin él: calcula sola la base de sus rutas.
 
 ## Reglas de marca
 
 - Colores: papel, tinta, naranja Facultad (#F8931F) y rojo URJC (#CB0017) como acento; nunca texto blanco sobre naranja.
-- Tipografías: Libre Franklin (titulares) y Newsreader (texto).
+- Tipografía: Libre Franklin en toda la web (titulares en peso alto; texto en peso normal).
 - Nunca el escudo de la URJC ni logos de AEDEM o la Fundación.
 - El pie «Comunicación no institucional» debe estar en todas las páginas.

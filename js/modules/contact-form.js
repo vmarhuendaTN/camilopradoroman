@@ -1,4 +1,4 @@
-// Formulario de contacto: valida en el navegador y envía a Formspree sin recargar la página.
+// Formulario de contacto: valida en el navegador y envía al servicio de js/config.js sin recargar la página.
 import { config } from '../config.js';
 
 export function initContactForm(root = document) {

@@ -45,7 +45,7 @@
 
   /* Tipografía */
   --font-titular: 'Libre Franklin', Arial, sans-serif;
-  --font-texto: 'Newsreader', Georgia, serif;
+  --font-texto: 'Libre Franklin', Arial, sans-serif; /* texto largo: misma familia que los titulares, en peso normal */
 
   --fs-xs: 0.75rem;        /* notas legales */
   --fs-caption: 0.8125rem; /* etiquetas en mayúsculas */
