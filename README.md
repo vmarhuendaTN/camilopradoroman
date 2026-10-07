@@ -29,7 +29,7 @@ camilopradoroman/
 │   ├── logo/                Sello CP (principal, inversa, favicon)
 │   ├── img/                 Fotografías
 │   └── docs/                PDF del programa y otros descargables
-├── CNAME                    Dominio: www.camilopradoroman.com (ver «Dominio propio»)
+├── CNAME                    Dominio: www.camilopradoroman.es (ver «Dominio propio»)
 ├── .nojekyll                Indica a GitHub Pages que publique los archivos tal cual
 ├── robots.txt
 └── sitemap.xml
@@ -99,16 +99,16 @@ También sirve la extensión Live Server de VS Code.
 
 1. El repositorio es `camilopradoroman`; lo que se sube a la rama `main` es lo que se publica.
 2. En el repositorio: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)`.
-3. En un par de minutos la web estará en https://www.camilopradoroman.com/ (el progreso se ve en la pestaña **Actions**).
+3. En un par de minutos la web estará en https://www.camilopradoroman.es/ (el progreso se ve en la pestaña **Actions**).
 
 Cada cambio que se suba a `main` se publica solo.
 
 ### Dominio propio
 
-La web se publica en `www.camilopradoroman.com` (archivo `CNAME`; GitHub Pages admite un solo dominio). Sin `CNAME`, se vería en https://vmarhuendatn.github.io/camilopradoroman/.
+La web se publica en `www.camilopradoroman.es` (archivo `CNAME`; GitHub Pages admite un solo dominio). Sin `CNAME`, se vería en https://vmarhuendatn.github.io/camilopradoroman/.
 
-1. En el proveedor del `.com`, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain** (un `CNAME` de `www` hacia `<usuario>.github.io` y los registros `A` del dominio raíz) y activa **Enforce HTTPS**.
-2. En el proveedor del `.es`, configura una redirección permanente (301) a `https://www.camilopradoroman.com`.
+1. En el proveedor del dominio, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain** (un `CNAME` de `www` hacia `<usuario>.github.io` y los registros `A` del dominio raíz) y activa **Enforce HTTPS**.
+2. Todo va en `camilopradoroman.es` (web y correo `hola@camilopradoroman.es`); no se usa `camilopradoroman.com`.
 3. Si algún día cambia el dominio, actualízalo a la vez en `CNAME`, `sitemap.xml`, `robots.txt` y en las etiquetas `canonical`, `og:` y `twitter:` de `index.html`.
 
 La página 404 funciona igual con dominio propio y sin él: calcula sola la base de sus rutas.

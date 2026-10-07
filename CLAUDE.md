@@ -14,7 +14,7 @@ Web estática de la candidatura del Dr. Camilo Prado Román (catedrático de Eco
 
   Gana en primera vuelta quien supere el 50 % de los votos ponderados; si no, segunda vuelta el 12 de noviembre. La web construye reputación y recoge propuestas; el voto se gana en persona.
 - Se publica en GitHub Pages desde la rama `main`, carpeta raíz. Cada push a `main` se publica solo (en uno o dos minutos; se sigue en la pestaña **Actions**).
-- Dirección: https://www.camilopradoroman.com/ (dominio en el archivo `CNAME`; ver «Dominio»).
+- Dirección: https://www.camilopradoroman.es/ (dominio en el archivo `CNAME`; ver «Dominio»).
 - Contacto y redes (definitivos): Instagram [@cpradoroman](https://www.instagram.com/cpradoroman/) · [LinkedIn](https://www.linkedin.com/in/camilo-prado-roman-38b37334/) · correo `hola@camilopradoroman.es` (formulario).
 - Responsable del proyecto: Victoria Marhuenda (comunicación de la campaña).
 
@@ -143,7 +143,7 @@ Añade un bloque a `data/encuentros.json` con `date`, `time`, `campus`, `place` 
 Ya está activo: el formulario envía con FormSubmit (`formEndpoint` de `js/config.js`) a `hola@camilopradoroman.es`, el correo de campaña, que también aparece bajo el formulario, en el pie y en `privacidad.html`. La primera vez hay que pulsar el enlace del correo de activación que manda FormSubmit. Si cambia el correo, cámbialo en esos cuatro sitios.
 
 ### Dominio
-Definitivo: `www.camilopradoroman.com` (archivo `CNAME`). `canonical`, las etiquetas `og:`/`twitter:` de `index.html`, `robots.txt` y `sitemap.xml` usan `https://www.camilopradoroman.com/`. El DNS del `.com` debe apuntar a GitHub Pages (Settings → Pages → Custom domain); `camilopradoroman.es` se redirige al `.com` desde su proveedor. Si se cambia de dominio, hay que cambiar el `CNAME` y todas esas direcciones a la vez. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
+Definitivo: **todo es `camilopradoroman.es`** — web `www.camilopradoroman.es` (archivo `CNAME`) y correo `hola@camilopradoroman.es`. `canonical`, las etiquetas `og:`/`twitter:` de `index.html`, `robots.txt` y `sitemap.xml` usan `https://www.camilopradoroman.es/`. No uses `camilopradoroman.com`. Si se cambia de dominio, hay que cambiar el `CNAME` y todas esas direcciones a la vez. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
 
 ## Reglas de marca (brandbook)
 
@@ -214,4 +214,4 @@ Cómo afecta a la web:
 - Pendiente de subir o configurar: PDF del programa y activación de FormSubmit (enlace del primer correo).
 - No hay canal de WhatsApp: no lo añadas.
 - Erratas detectadas en el programa v1 (corregidas en la web, no en el Word): «intencionales» → «internacionales», «Postgrados» → «Posgrados», «EULIST» → «EULiST», paréntesis sin cerrar en la medida del TFG; «cambios normativos (RD)» no indica qué Real Decreto.
-- Confirmado: dominio `www.camilopradoroman.com`, Instagram `@cpradoroman`, LinkedIn, correo `hola@camilopradoroman.es`, perfiles de investigador y calendario electoral.
+- Confirmado: dominio `www.camilopradoroman.es`, Instagram `@cpradoroman`, LinkedIn, correo `hola@camilopradoroman.es`, perfiles de investigador y calendario electoral.
