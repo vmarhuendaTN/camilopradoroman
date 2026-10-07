@@ -20,12 +20,16 @@
 /* 4. Componentes reutilizables */
 @import url('components/button.css');
 @import url('components/photo.css');
+@import url('components/list.css');
+@import url('components/quote.css');
 @import url('components/card.css');
 @import url('components/tabs.css');
 @import url('components/form.css');
 
 /* 5. Secciones de página */
 @import url('sections/hero.css');
+@import url('sections/manifiesto.css');
 @import url('sections/encuentros.css');
 @import url('sections/quien-soy.css');
+@import url('sections/compromiso.css');
 @import url('sections/legal.css');

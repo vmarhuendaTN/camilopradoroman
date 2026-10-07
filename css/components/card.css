@@ -1,42 +1,33 @@
-/* Tarjetas de compromiso (sección Programa), en rejilla tipo mosaico sobre tinta. */
+/* Tarjetas de las líneas del programa: blancas, filete finísimo y medidas en un desplegable. */
 .cards {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tarjeta-programa-min)), 1fr));
   gap: var(--space-4);
-  counter-reset: compromiso;
+  align-items: start;
 }
 
 .card {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
   padding: clamp(var(--space-5), 3vw, var(--space-6));
-  background: var(--color-tinta-2);
-  border: var(--border-fino) solid var(--color-tinta-borde);
+  background: var(--color-blanco);
+  border: var(--border-fino) solid var(--color-hairline);
   border-radius: var(--radius-l);
-  overflow: hidden;
-  transition: transform var(--dur-media) var(--ease-out), border-color var(--dur-media) var(--ease-out);
+  box-shadow: var(--sombra-tarjeta);
+  transition: box-shadow var(--dur-media) var(--ease-out);
 }
-.card:hover { transform: translateY(calc(var(--space-1) * -1)); border-color: var(--color-naranja); }
-
-/* Filete de acento en la parte superior */
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: var(--filete-cabecera);
-  background: var(--degradado-marca-oscuro);
-}
+.card:hover { box-shadow: var(--sombra-flotante); }
 
 .card__number {
   font-size: var(--fs-caption);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--tracking-caps);
-  color: var(--color-naranja);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-naranja-tinta);
 }
 
 .card__title {
@@ -44,31 +35,47 @@
   letter-spacing: var(--tracking-tight);
 }
 
-.card__text,
-.card__list {
+.card__text {
   font-family: var(--font-texto);
   font-size: var(--fs-text);
   line-height: var(--lh-snug);
-  color: var(--color-texto-claro);
+  color: var(--color-pizarra);
 }
 
-.card__list { margin: 0; padding-left: var(--space-5); display: grid; gap: var(--space-1); }
-.card__list li::marker { color: var(--color-naranja); }
+/* Desplegable de medidas (funciona sin JavaScript) */
+.card__detalle { margin-top: var(--space-2); border-top: var(--border-fino) solid var(--color-linea); }
+
+.card__detalle summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--tap-min);
+  padding-top: var(--space-3);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--color-tinta);
+  list-style: none;
+  cursor: pointer;
+}
+.card__detalle summary::-webkit-details-marker { display: none; }
+.card__detalle summary::after {
+  content: '';
+  width: var(--punto);
+  height: var(--punto);
+  border-right: var(--border-grueso) solid var(--color-pizarra);
+  border-bottom: var(--border-grueso) solid var(--color-pizarra);
+  transform: rotate(45deg);
+  transition: transform var(--dur-media) var(--ease-out);
+}
+.card__detalle[open] summary::after { transform: rotate(-135deg); }
+.card__detalle[open] .lista { animation: panel-entra var(--dur-media) var(--ease-out); }
 
 .card__indicator {
-  margin-top: auto;
-  padding-top: var(--space-4);
-  border-top: var(--border-fino) solid var(--color-tinta-borde);
   font-size: var(--fs-small);
-  line-height: var(--lh-body);
-  color: var(--color-texto-claro);
+  color: var(--color-pizarra);
 }
 .card__indicator strong {
-  display: block;
-  margin-bottom: var(--space-1);
-  font-size: var(--fs-caption);
+  margin-right: var(--space-2);
   font-weight: var(--fw-semibold);
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-  color: var(--color-papel);
+  color: var(--color-tinta);
 }

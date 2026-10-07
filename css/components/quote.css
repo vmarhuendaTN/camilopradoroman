@@ -1,0 +1,41 @@
+/* Citas destacadas del programa (Newsreader, como marca el brandbook para las citas). */
+.cita {
+  margin: 0 auto;
+  max-width: var(--medida-cita);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+}
+
+.cita__texto { margin: 0; }
+.cita__texto p {
+  font-family: var(--font-texto);
+  font-size: var(--fs-cita);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-tinta);
+}
+.cita__texto p::before { content: '«'; }
+.cita__texto p::after { content: '»'; }
+
+.cita--s .cita__texto p { font-size: var(--fs-cita-s); color: var(--color-pizarra); }
+
+/* Filete corto en rojo: el único toque de color de la cita */
+.cita__autor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-small);
+  color: var(--color-pizarra);
+}
+.cita__autor::before {
+  content: '';
+  width: var(--space-6);
+  height: var(--border-grueso);
+  background: var(--color-rojo);
+  border-radius: var(--radius-pill);
+}

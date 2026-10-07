@@ -1,0 +1,24 @@
+/* Lista de medidas al estilo de las listas de una app: filas con filete y viñeta de acento. */
+.lista { list-style: none; margin: 0; padding: 0; }
+
+.lista li {
+  display: flex;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  font-size: var(--fs-ui);
+  line-height: var(--linea-alto);
+  color: var(--color-tinta);
+}
+.lista li + li { border-top: var(--border-fino) solid var(--color-linea); }
+
+.lista li::before {
+  content: '';
+  flex-shrink: 0;
+  width: var(--punto);
+  height: var(--punto);
+  margin-top: calc((var(--linea-alto) - var(--punto)) / 2);
+  border-radius: 50%;
+  background: var(--color-naranja);
+}
+
+.lista a { color: var(--color-naranja-tinta); }

@@ -1,12 +1,13 @@
-/* Formulario de contacto sobre fondo tinta (js/modules/contact-form.js). */
+/* Formulario de contacto en tarjeta clara, con campos rellenos al estilo de una app (js/modules/contact-form.js). */
 .form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tarjeta-min)), 1fr));
   gap: var(--space-4);
   padding: clamp(var(--space-5), 4vw, var(--space-7));
-  background: var(--color-tinta-2);
-  border: var(--border-fino) solid var(--color-tinta-borde);
+  background: var(--color-blanco);
+  border: var(--border-fino) solid var(--color-hairline);
   border-radius: var(--radius-l);
+  box-shadow: var(--sombra-tarjeta);
 }
 .form > .field--full,
 .form > .check,
@@ -16,7 +17,7 @@
 .field label {
   font-size: var(--fs-small);
   font-weight: var(--fw-medium);
-  color: var(--color-texto-claro);
+  color: var(--color-pizarra);
 }
 
 .field input,
@@ -26,42 +27,40 @@
   min-height: var(--control-h);
   font-size: var(--fs-control);
   padding: var(--control-pad-y-s) var(--space-4);
-  border: var(--border-fino) solid var(--color-tinta-borde);
+  border: var(--border-fino) solid transparent;
   border-radius: var(--radius-s);
-  background: var(--color-tinta-3);
-  color: var(--color-papel);
-  transition: border-color var(--dur-rapida) var(--ease-out), box-shadow var(--dur-rapida) var(--ease-out);
+  background: var(--color-campo);
+  color: var(--color-tinta);
+  transition: border-color var(--dur-rapida) var(--ease-out), box-shadow var(--dur-rapida) var(--ease-out), background-color var(--dur-rapida) var(--ease-out);
 }
 .field textarea { resize: vertical; }
-.field input:hover,
-.field select:hover,
-.field textarea:hover { border-color: var(--color-texto-claro); }
 .field input:focus-visible,
 .field select:focus-visible,
 .field textarea:focus-visible {
   outline: none;
-  border-color: var(--color-naranja);
+  background: var(--color-blanco);
+  border-color: var(--color-naranja-tinta);
   box-shadow: 0 0 0 var(--foco-grosor) var(--color-foco-suave);
 }
-.field [aria-invalid='true'] { border-color: var(--color-error-claro); }
+.field [aria-invalid='true'] { border-color: var(--color-error); }
 
 .check {
   display: flex;
   gap: var(--space-3);
   align-items: flex-start;
   font-size: var(--fs-small);
-  color: var(--color-texto-claro);
+  color: var(--color-pizarra);
 }
 .check input {
   width: var(--check-size);
   height: var(--check-size);
   margin-top: var(--space-1);
   flex-shrink: 0;
-  accent-color: var(--color-naranja);
+  accent-color: var(--color-tinta);
 }
 
 .check a,
-.form__alt a { color: var(--color-naranja); }
+.form__alt a { color: var(--color-naranja-tinta); }
 
 .form__footer {
   display: flex;
@@ -72,12 +71,12 @@
 
 .form__status { font-size: var(--fs-small); font-weight: var(--fw-semibold); }
 .form__status:empty { display: none; }
-.form__status[data-state='ok'] { color: var(--color-naranja); }
-.form__status[data-state='error'] { color: var(--color-error-claro); }
+.form__status[data-state='ok'] { color: var(--color-naranja-tinta); }
+.form__status[data-state='error'] { color: var(--color-error); }
 
 .form__alt {
   font-family: var(--font-texto);
   font-size: var(--fs-body);
   text-align: center;
-  color: var(--color-texto-claro);
+  color: var(--color-pizarra);
 }

@@ -2,8 +2,8 @@
   Tokens de marca (brandbook). Cambiar un valor aquí lo cambia en toda la web.
   No escribas colores, tipografías ni espacios sueltos en otros archivos: usa estas variables.
 
-  Criterio visual: base neutra (papel y blanco), tinta para los bloques de autoridad
-  y los colores de marca solo como detalle (acentos, cifras, filetes).
+  Criterio visual: fondos siempre claros (papel, papel 2 y blanco), texto en tinta y los colores
+  de marca solo para destacar (cifras, numerales, viñetas, filete de cabecera), nunca como fondo.
 */
 :root {
   /* Color: marca */
@@ -29,7 +29,10 @@
   --color-error-claro: #ff8a8a;    /* mensajes de error sobre tinta */
   --color-cabecera: rgb(251 247 241 / 0.78); /* papel translúcido de la cabecera */
   --color-foco: var(--color-naranja-tinta); /* anillo de foco; sobre tinta se cambia a naranja */
-  --color-foco-suave: rgb(248 147 31 / 0.35); /* halo de foco en campos sobre tinta */
+  --color-foco-suave: rgb(168 82 0 / 0.18); /* halo de foco en campos */
+  --color-campo: #f4f1ec;          /* relleno de campos de formulario */
+  --color-error: var(--color-rojo); /* mensajes de error sobre claro */
+  --color-hairline: rgb(23 24 43 / 0.08); /* filete finísimo de tarjetas */
 
   /* Degradados de acento (solo en titulares grandes) */
   --degradado-marca: linear-gradient(100deg, var(--color-naranja-tinta) 10%, var(--color-rojo) 90%);
@@ -55,6 +58,8 @@
   --fs-h4: 1.375rem;
   --fs-h3: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
   --fs-number: clamp(2.75rem, 2rem + 3vw, 4.5rem); /* cifras grandes */
+  --fs-cita: clamp(1.625rem, 1.1rem + 2.2vw, 2.875rem); /* citas destacadas */
+  --fs-cita-s: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
   --fs-h2: clamp(2.25rem, 1.4rem + 3.6vw, 4.25rem);
   --fs-h1: clamp(2.75rem, 1.2rem + 6.4vw, 6.5rem);
 
@@ -128,8 +133,12 @@
   --medida-portada: 60rem;        /* ancho máximo del texto de portada */
   --medida-texto: 40rem;          /* ancho máximo de párrafos destacados */
   --tarjeta-min: 16rem;           /* ancho mínimo de tarjetas en rejilla */
+  --tarjeta-programa-min: 26rem;  /* ancho mínimo de las tarjetas del programa (2 columnas en escritorio) */
+  --columna-min: 20rem;           /* ancho mínimo de columnas de texto (Quién soy) */
   --evento-alto: 13rem;
   --cifra-min: 8.5rem;            /* ancho mínimo de cada cifra (2 columnas en móvil) */
+  --medida-cita: 52rem;           /* ancho máximo de las citas */
+  --linea-alto: 1.5rem;           /* alto de la línea de cada medida (alinea la viñeta) */
 
   /* Iconos y piezas pequeñas */
   --sello-cabecera: 2rem;
