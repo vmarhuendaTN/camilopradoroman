@@ -44,7 +44,7 @@
   --sombra-control: 0 1px 3px rgb(23 24 43 / 0.12);
 
   /* Tipografía */
-  --font-titular: 'Libre Franklin', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-titular: 'Libre Franklin', Arial, sans-serif;
   --font-texto: 'Newsreader', Georgia, serif;
 
   --fs-xs: 0.75rem;        /* notas legales */
@@ -138,7 +138,7 @@
   --evento-alto: 13rem;
   --cifra-min: 8.5rem;            /* ancho mínimo de cada cifra (2 columnas en móvil) */
   --medida-cita: 52rem;           /* ancho máximo de las citas */
-  --linea-alto: 1.5rem;           /* alto de la línea de cada medida (alinea la viñeta) */
+  --linea-alto: 1.75rem;          /* alto de la línea de cada medida (alinea la viñeta) */
 
   /* Iconos y piezas pequeñas */
   --sello-cabecera: 2rem;
