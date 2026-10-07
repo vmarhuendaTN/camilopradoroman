@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
+  text-align: center;
   min-height: var(--control-h);
   padding: var(--control-pad-y-s) var(--control-pad-x);
   border: var(--border-fino) solid transparent;

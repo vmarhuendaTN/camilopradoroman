@@ -1,0 +1,33 @@
+/* Manifiesto: cita del programa y tres datos de la Facultad. */
+.manifiesto { padding-top: 0; }
+
+.datos {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tarjeta-min)), 1fr));
+  border-top: var(--border-fino) solid var(--color-linea);
+}
+
+.dato {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+}
+.dato + .dato { border-left: var(--border-fino) solid var(--color-linea); }
+@media (max-width: 760px) {
+  .dato + .dato { border-left: 0; border-top: var(--border-fino) solid var(--color-linea); }
+}
+
+.dato dd {
+  margin: 0;
+  font-size: var(--fs-number);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--lh-none);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-rojo);
+}
+.dato dt { font-size: var(--fs-small); color: var(--color-pizarra); }
