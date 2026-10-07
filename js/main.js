@@ -2,6 +2,7 @@
 // y después activa cada módulo. Para añadir comportamiento nuevo: crea un archivo en
 // js/modules/, expórtale una función init y añádela a la lista de abajo.
 import { loadIncludes } from './modules/include.js';
+import { initSchedule } from './modules/schedule.js';
 import { initNav } from './modules/nav.js';
 import { initReveal } from './modules/reveal.js';
 import { initTabs } from './modules/tabs.js';
@@ -14,6 +15,12 @@ const modules = [initNav, initReveal, initYear, initPhotos, initTabs, initContac
 
 async function start() {
   await loadIncludes();
+  // Primero, mostrar u ocultar lo que depende de la fecha (calendario electoral)
+  try {
+    initSchedule();
+  } catch (err) {
+    console.error('Error al iniciar initSchedule', err);
+  }
   // Cada módulo arranca por separado: si uno falla, los demás siguen funcionando.
   await Promise.all(
     modules.map(async (init) => {

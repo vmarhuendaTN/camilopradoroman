@@ -29,7 +29,7 @@ camilopradoroman/
 │   ├── logo/                Sello CP (principal, inversa, favicon)
 │   ├── img/                 Fotografías
 │   └── docs/                PDF del programa y otros descargables
-├── CNAME.example            Dominio preparado: www.camilopradoroman.com (ver «Dominio propio»)
+├── CNAME                    Dominio: www.camilopradoroman.es (ver «Dominio propio»)
 ├── .nojekyll                Indica a GitHub Pages que publique los archivos tal cual
 ├── robots.txt
 └── sitemap.xml
@@ -108,7 +108,7 @@ Cada cambio que se suba a `main` se publica solo.
 La web se publica en `www.camilopradoroman.es` (archivo `CNAME`; GitHub Pages admite un solo dominio). Sin `CNAME`, se vería en https://vmarhuendatn.github.io/camilopradoroman/.
 
 1. En el proveedor del dominio, crea los registros DNS que indica GitHub en **Settings → Pages → Custom domain** (un `CNAME` de `www` hacia `<usuario>.github.io` y los registros `A` del dominio raíz) y activa **Enforce HTTPS**.
-2. Si queréis usar también `camilopradoroman.com`, configúralo en su proveedor como redirección permanente (301) a `https://www.camilopradoroman.es`.
+2. Todo va en `camilopradoroman.es` (web y correo `hola@camilopradoroman.es`); no se usa `camilopradoroman.com`.
 3. Si algún día cambia el dominio, actualízalo a la vez en `CNAME`, `sitemap.xml`, `robots.txt` y en las etiquetas `canonical`, `og:` y `twitter:` de `index.html`.
 
 La página 404 funciona igual con dominio propio y sin él: calcula sola la base de sus rutas.
