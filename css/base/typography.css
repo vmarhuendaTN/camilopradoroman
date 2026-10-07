@@ -1,4 +1,4 @@
-/* Tipografía base: Libre Franklin para titulares e interfaz, Newsreader para texto largo. */
+/* Tipografía base: Libre Franklin para todo (titulares en peso alto, texto en peso normal). */
 body {
   font-family: var(--font-titular);
   font-size: var(--fs-body);

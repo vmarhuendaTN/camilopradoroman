@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vmarhuendatn.github.io/camilopradoroman/sitemap.xml
+Sitemap: https://www.camilopradoroman.es/sitemap.xml
