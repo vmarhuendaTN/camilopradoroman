@@ -25,7 +25,7 @@ export function initNav(root = document) {
       toggle.focus();
     }
   });
-  window.matchMedia('(min-width: 761px)').addEventListener('change', (event) => {
+  window.matchMedia('(min-width: 861px)').addEventListener('change', (event) => {
     if (event.matches) setOpen(false);
   });
 }

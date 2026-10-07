@@ -86,7 +86,7 @@
 }
 
 /* Móvil: menú desplegable con botón (solo si hay JavaScript; sin él, el menú se ve abierto) */
-@media (max-width: 760px) {
+@media (max-width: 860px) {
   .js-nav .header__toggle {
     display: inline-flex;
     align-items: center;

@@ -6,9 +6,16 @@ Instrucciones para Claude Code. Léelas antes de tocar nada en este repositorio.
 
 Web estática de la candidatura del Dr. Camilo Prado Román (catedrático de Economía Financiera y Contabilidad, presidente de AEDEM) al decanato de la Facultad de Ciencias de la Economía y de la Empresa de la Universidad Rey Juan Carlos (URJC).
 
-- Quien vota es la Junta de Facultad (PDI, PTGAS y representantes de estudiantes). La web construye reputación y recoge propuestas; el voto se gana en persona.
+- **Vota toda la Facultad, no la Junta:** sufragio universal, presencial y ponderado (convocatoria del 29-09-2026 y Reglamento, BOURJC n.º 82):
+  - PDI doctor con vinculación permanente: 53 %
+  - Estudiantado: 21 %
+  - Resto del PDI: 15 %
+  - PTGAS: 11 %
+
+  Gana en primera vuelta quien supere el 50 % de los votos ponderados; si no, segunda vuelta el 12 de noviembre. La web construye reputación y recoge propuestas; el voto se gana en persona.
 - Se publica en GitHub Pages desde la rama `main`, carpeta raíz. Cada push a `main` se publica solo (en uno o dos minutos; se sigue en la pestaña **Actions**).
-- Dirección: https://www.camilopradoroman.es/ (dominio en el archivo `CNAME`; ver «Dominio»).
+- Dirección: https://www.camilopradoroman.com/ (dominio en el archivo `CNAME`; ver «Dominio»).
+- Contacto y redes (definitivos): Instagram [@cprador](https://www.instagram.com/cprador) · [LinkedIn](https://www.linkedin.com/in/camilo-prado-roman-38b37334/) · correo `hola@camilopradoroman.es` (formulario).
 - Responsable del proyecto: Victoria Marhuenda (comunicación de la campaña).
 
 Idioma: todo el contenido, los comentarios de código y los mensajes de commit van en **español**.
@@ -56,6 +63,8 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | Comportamiento | `js/modules/<modulo>.js`, arrancado desde `js/main.js` |
 | Menú móvil | `js/modules/nav.js` y `css/layout/header.css` |
 | Aparición al hacer scroll | `js/modules/reveal.js` y `css/base/motion.css` |
+| Contenido que aparece en una fecha (campaña) | atributo `data-show-from` + `js/modules/schedule.js` |
+| Cómo votar | `index.html` (sección `#votar`) y `css/sections/votar.css` |
 | Ajustes editables (formulario, textos) | `js/config.js` |
 | Logotipo | `assets/logo/` |
 | Fotos | `assets/img/` (nombres en `assets/img/LEEME.md`) |
@@ -72,9 +81,12 @@ Orden de secciones en `index.html` y fondo de cada una (alternan papel y papel 2
 3. **Programa** (`#programa`, papel 2): cuatro líneas en tarjetas con desplegable «Ver las medidas» (`<details>`, funciona sin JavaScript).
 4. **Para ti** (`#para-ti`): pestañas Estudiantes · PDI · PTGAS con sus medidas.
 5. **Encuentros** (`#encuentros`, papel 2): tarjetas desde `data/encuentros.json`; carrusel en móvil.
-6. **Quién soy** (`#quien-soy`): retrato, presentación, cifras y perfiles de investigador.
-7. **Compromiso** (`#compromiso`, papel 2): cita de compromiso institucional y tres compromisos.
-8. **Contacto** (`#contacto`): formulario.
+6. **Cómo votar** (`#votar`): solo desde el 23 de octubre (`data-show-from`); cuándo, dónde, qué llevar y voto anticipado.
+7. **Quién soy** (`#quien-soy`): retrato, presentación, cifras y perfiles de investigador.
+8. **Compromiso** (`#compromiso`, papel 2): cita de compromiso institucional y tres compromisos.
+9. **Contacto** (`#contacto`): formulario.
+
+La portada muestra también la fecha de las elecciones bajo la etiqueta del titular (`.hero__date`).
 
 ## Origen de los textos
 
@@ -91,6 +103,7 @@ Orden de secciones en `index.html` y fondo de cada una (alternan papel y papel 2
 - Cabecera y pie solo en `partials/`; las páginas los insertan con `<div data-include="partials/…"></div>`.
 - Enlaces del menú con la forma `./#seccion`, para que funcionen desde cualquier página.
 - Fotos con `data-placeholder="…"`: si falta el archivo, `js/modules/photos.js` muestra un recuadro con instrucciones. Portada horizontal 3:2, se ve entera en escritorio (en móvil se recorta a 4:5 por el centro); retrato 2:3 en un hueco 4:5, recortado por abajo (`.photo--retrato`).
+- `data-show-from="AAAA-MM-DD"` (con `hidden` en el HTML) hace que un elemento aparezca solo desde esa fecha, en hora de Madrid; `data-hide-from` lo vuelve a ocultar. Lo gestiona `js/modules/schedule.js`, que se ejecuta justo después de cargar los parciales.
 - `data-reveal` en un bloque lo hace aparecer suavemente al hacer scroll; `data-reveal-stagger` en un contenedor anima sus hijos en cascada. Sin JavaScript o con «reducir movimiento», todo se ve sin animar.
 - Etiqueta pequeña sobre cada `h2`: `<p class="eyebrow">Nombre de la sección</p>`. Palabra destacada con degradado de marca: `<span class="text-marca">…</span>` (solo en titulares grandes y con mesura).
 - Huecos pendientes entre corchetes y en mayúsculas: `[MEDIDA]`, `[FECHA]`, `[ID-FORMULARIO]`. Nunca inventes datos para rellenarlos.
@@ -130,7 +143,7 @@ Añade un bloque a `data/encuentros.json` con `date`, `time`, `campus`, `place` 
 Ya está activo: el formulario envía con FormSubmit (`formEndpoint` de `js/config.js`) a `hola@camilopradoroman.es`, el correo de campaña, que también aparece bajo el formulario, en el pie y en `privacidad.html`. La primera vez hay que pulsar el enlace del correo de activación que manda FormSubmit. Si cambia el correo, cámbialo en esos cuatro sitios.
 
 ### Dominio
-Activo: `www.camilopradoroman.es` (archivo `CNAME`). `canonical`, las etiquetas `og:`/`twitter:` de `index.html`, `robots.txt` y `sitemap.xml` usan `https://www.camilopradoroman.es/`. Si se cambia de dominio (por ejemplo a `.com`), hay que cambiar el `CNAME` y todas esas direcciones a la vez, y configurar en el proveedor la redirección del dominio que quede secundario. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
+Definitivo: `www.camilopradoroman.com` (archivo `CNAME`). `canonical`, las etiquetas `og:`/`twitter:` de `index.html`, `robots.txt` y `sitemap.xml` usan `https://www.camilopradoroman.com/`. El DNS del `.com` debe apuntar a GitHub Pages (Settings → Pages → Custom domain); `camilopradoroman.es` se redirige al `.com` desde su proveedor. Si se cambia de dominio, hay que cambiar el `CNAME` y todas esas direcciones a la vez. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
 
 ## Reglas de marca (brandbook)
 
@@ -148,9 +161,33 @@ Activo: `www.camilopradoroman.es` (archivo `CNAME`). `canonical`, las etiquetas 
   - Texto largo (`--font-texto`, también Libre Franklin): entradillas, párrafos, resúmenes, listas de medidas, compromisos y citas, en peso normal (citas en peso medio, sin cursiva).
   - Newsreader ya no se usa ni se carga; no la reintroduzcas sin que se pida.
 - Logotipo: sello circular con las iniciales CP en cursiva y una fina línea roja desplazada. Usa los SVG de `assets/logo/`; no lo redibujes ni cambies sus colores.
-- Eslóganes: «Aquí se viene a crecer.» (paraguas) · «Tu título, con más valor.» (estudiantes) · «Escuchar primero. Decidir con datos.» (llamada a la acción).
+- Eslogan único: «Aquí se viene a crecer.» Sin eslóganes secundarios.
 - Tono: tuteo, frases cortas, cada promesa con su medida y su indicador. Nada de memes, emojis en titulares, críticas al equipo saliente ni a otras candidaturas.
 - Accesibilidad: contraste mínimo 4,5:1 en texto, objetivos táctiles de 44 px, foco visible, `alt` en todas las imágenes.
+
+## Calendario electoral oficial (no cambiar sin nueva convocatoria)
+
+Fuentes: convocatoria firmada por el decano el 29-09-2026 y Reglamento para las elecciones a decano (BOURJC n.º 82, 28-09-2026).
+
+| Fecha (2026) | Hito |
+| --- | --- |
+| 9 oct | Censo definitivo |
+| 13–16 oct | Presentación de candidaturas (registro electrónico) |
+| 22 oct | Proclamación definitiva de candidaturas |
+| 23 y 26 oct | Campaña electoral y voto anticipado por registro |
+| 27 oct | Jornada de reflexión: nada de campaña |
+| 28 oct | Votación presencial, 9 a 20 h (DNI, pasaporte, carné de conducir o carné URJC) |
+| 6 y 10 nov | Campaña de segunda vuelta, si la hay |
+| 11 nov | Reflexión de segunda vuelta |
+| 12 nov | Votación de segunda vuelta |
+
+Cómo afecta a la web:
+
+- Antes del 23 de octubre la web presenta la candidatura y el programa, pero **no pide el voto** (el reglamento reserva la petición pública de voto a la campaña, art. 12.3).
+- Contenido de campaña (sección «Cómo votar», enlace del menú, llamadas a votar) solo con `data-show-from="2026-10-23"`; lo gestiona `js/modules/schedule.js` con la hora de Madrid.
+- **27 y 28 de octubre: no se publica nada nuevo ni se hace push con cambios de contenido.** Si hace falta corregir un error, solo el error.
+- Mesas electorales: pendiente de que la Junta Electoral las publique; sustituir `[MESAS ELECTORALES · pendiente de la Junta Electoral]` en `index.html`.
+- Los encuentros de `data/encuentros.json` deben caer entre el 13 y el 26 de octubre.
 
 ## Reglas de campaña (no negociables)
 
@@ -165,15 +202,16 @@ Activo: `www.camilopradoroman.es` (archivo `CNAME`). `canonical`, las etiquetas 
 1. `python3 -m http.server 8000` y abrir `http://localhost:8000`.
 2. Revisar al menos a 320, 390, 768, 1366 y 1920 px de ancho, y un móvil en horizontal (844 × 390): sin scroll horizontal, nada fuera de pantalla y con la cabecera y el pie cargados.
 3. Consola del navegador sin errores, salvo los 404 de fotos o del PDF pendientes de subir.
-4. Si se ha tocado: probar las pestañas con teclado (flechas), el menú móvil (abrir, cerrar con Escape), los desplegables de medidas, el envío del formulario y la lista de encuentros.
-5. Comprobar que toda la web sale en Libre Franklin (y que no se carga Newsreader).
+4. Hoy, antes del 23 de octubre, «Cómo votar» y su enlace del menú no deben verse. Para probar la campaña sin tocar el código, adelanta el reloj del navegador (por ejemplo, el reloj simulado de Playwright) al 24 de octubre; si fuerzas la fecha en `schedule.js`, deshazlo antes del commit.
+5. Si se ha tocado: probar las pestañas con teclado (flechas), el menú móvil (abrir, cerrar con Escape), los desplegables de medidas, el envío del formulario y la lista de encuentros.
+6. Comprobar que toda la web sale en Libre Franklin (y que no se carga Newsreader).
 
 ## Contexto de la campaña (fuera del repositorio)
 
 - Plan de comunicación y brandbook definitivos: documento compartido de la campaña (pestañas «Plan de comunicación» y «Brandbook»).
 - Piezas de diseño (logo, posts, story, carrusel, maqueta web): lienzo de diseño de la campaña.
-- Pendiente de confirmar: fechas electorales, visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, y equipo decanal.
+- Pendiente de confirmar: visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal, mesas electorales y fechas de los cafés por campus.
 - Pendiente de subir o configurar: PDF del programa y activación de FormSubmit (enlace del primer correo).
 - No hay canal de WhatsApp: no lo añadas.
 - Erratas detectadas en el programa v1 (corregidas en la web, no en el Word): «intencionales» → «internacionales», «Postgrados» → «Posgrados», «EULIST» → «EULiST», paréntesis sin cerrar en la medida del TFG; «cambios normativos (RD)» no indica qué Real Decreto.
-- Confirmado: dominio activo `www.camilopradoroman.es` (también registrado `.com`), Instagram `@cpradoroman`, LinkedIn y perfiles de investigador.
+- Confirmado: dominio `www.camilopradoroman.com`, Instagram `@cprador`, LinkedIn, correo `hola@camilopradoroman.es`, perfiles de investigador y calendario electoral.
