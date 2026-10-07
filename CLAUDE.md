@@ -15,7 +15,7 @@ Web estática de la candidatura del Dr. Camilo Prado Román (catedrático de Eco
   Gana en primera vuelta quien supere el 50 % de los votos ponderados; si no, segunda vuelta el 12 de noviembre. La web construye reputación y recoge propuestas; el voto se gana en persona.
 - Se publica en GitHub Pages desde la rama `main`, carpeta raíz. Cada push a `main` se publica solo (en uno o dos minutos; se sigue en la pestaña **Actions**).
 - Dirección: https://www.camilopradoroman.com/ (dominio en el archivo `CNAME`; ver «Dominio»).
-- Contacto y redes (definitivos): Instagram [@cprador](https://www.instagram.com/cprador) · [LinkedIn](https://www.linkedin.com/in/camilo-prado-roman-38b37334/) · correo `hola@camilopradoroman.es` (formulario).
+- Contacto y redes (definitivos): Instagram [@cpradoroman](https://www.instagram.com/cpradoroman/) · [LinkedIn](https://www.linkedin.com/in/camilo-prado-roman-38b37334/) · correo `hola@camilopradoroman.es` (formulario).
 - Responsable del proyecto: Victoria Marhuenda (comunicación de la campaña).
 
 Idioma: todo el contenido, los comentarios de código y los mensajes de commit van en **español**.
@@ -214,4 +214,4 @@ Cómo afecta a la web:
 - Pendiente de subir o configurar: PDF del programa y activación de FormSubmit (enlace del primer correo).
 - No hay canal de WhatsApp: no lo añadas.
 - Erratas detectadas en el programa v1 (corregidas en la web, no en el Word): «intencionales» → «internacionales», «Postgrados» → «Posgrados», «EULIST» → «EULiST», paréntesis sin cerrar en la medida del TFG; «cambios normativos (RD)» no indica qué Real Decreto.
-- Confirmado: dominio `www.camilopradoroman.com`, Instagram `@cprador`, LinkedIn, correo `hola@camilopradoroman.es`, perfiles de investigador y calendario electoral.
+- Confirmado: dominio `www.camilopradoroman.com`, Instagram `@cpradoroman`, LinkedIn, correo `hola@camilopradoroman.es`, perfiles de investigador y calendario electoral.
