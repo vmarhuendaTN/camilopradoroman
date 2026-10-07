@@ -59,6 +59,7 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | Ajustes editables (formulario, textos) | `js/config.js` |
 | Logotipo | `assets/logo/` |
 | Fotos | `assets/img/` (nombres en `assets/img/LEEME.md`) |
+| Imagen al compartir (WhatsApp, redes) | `assets/img/og-image.jpg` y etiquetas `og:` de `index.html` |
 | PDF del programa | `assets/docs/programa-camilo-prado.pdf` |
 | Privacidad | `privacidad.html` |
 
@@ -129,7 +130,7 @@ Añade un bloque a `data/encuentros.json` con `date`, `time`, `campus`, `place` 
 Pega la dirección de Formspree en `formEndpoint` de `js/config.js` y nombra el servicio en `privacidad.html`.
 
 ### Dominio
-Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra a `CNAME` cuando el DNS esté configurado (antes, la web se ve en `github.io/camilopradoroman`). `camilopradoroman.es` redirige a él desde el proveedor del dominio. Si cambia, actualiza `CNAME`, `robots.txt`, `sitemap.xml` y las etiquetas `canonical` y `og:` de `index.html`. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
+Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra a `CNAME` cuando el DNS esté configurado (antes, la web se ve en `github.io/camilopradoroman`). `camilopradoroman.es` redirige a él desde el proveedor del dominio. Mientras tanto, `canonical`, las etiquetas `og:`/`twitter:` de `index.html`, `robots.txt` y `sitemap.xml` apuntan a `https://vmarhuendatn.github.io/camilopradoroman/`; al activar el dominio (o si cambia) hay que cambiarlas todas a la dirección nueva. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
 
 ## Reglas de marca (brandbook)
 
@@ -171,6 +172,6 @@ Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra
 - Plan de comunicación y brandbook definitivos: documento compartido de la campaña (pestañas «Plan de comunicación» y «Brandbook»).
 - Piezas de diseño (logo, posts, story, carrusel, maqueta web): lienzo de diseño de la campaña.
 - Pendiente de confirmar: fechas electorales, visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal y canal de WhatsApp.
-- Pendiente de subir o configurar: fotos (`assets/img/`), PDF del programa, dirección de Formspree, enlace del canal de WhatsApp y DNS del dominio.
+- Pendiente de subir o configurar: PDF del programa, dirección de Formspree, enlace del canal de WhatsApp y DNS del dominio.
 - Erratas detectadas en el programa v1 (corregidas en la web, no en el Word): «intencionales» → «internacionales», «Postgrados» → «Posgrados», «EULIST» → «EULiST», paréntesis sin cerrar en la medida del TFG; «cambios normativos (RD)» no indica qué Real Decreto.
 - Confirmado: dominio `www.camilopradoroman.com` (y `.es`), Instagram `@cpradoroman`, LinkedIn y perfiles de investigador.
