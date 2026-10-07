@@ -46,7 +46,7 @@ camilopradoroman/
 | Activar el formulario | `js/config.js` (ver «Formulario») |
 | Poner las fotos | Subir a `assets/img/` con estos nombres: `camilo-prado-hero.jpg` (horizontal 16:9) y `camilo-prado-retrato.jpg` (vertical 4:5); detalles en `assets/img/LEEME.md` |
 | Publicar el programa | Subir `assets/docs/programa-camilo-prado.pdf` |
-| Imagen al compartir en redes | Subir `assets/img/og-image.png` (1200 × 630) |
+| Imagen al compartir en redes | `assets/img/og-image.jpg` (1200 × 630, menos de 300 KB) |
 
 Mientras falte una foto, la web muestra en su lugar un recuadro con el nombre del archivo que hay que subir.
 

@@ -7,7 +7,8 @@ Instrucciones para Claude Code. Léelas antes de tocar nada en este repositorio.
 Web estática de la candidatura del Dr. Camilo Prado Román (catedrático de Economía Financiera y Contabilidad, presidente de AEDEM) al decanato de la Facultad de Ciencias de la Economía y de la Empresa de la Universidad Rey Juan Carlos (URJC).
 
 - Quien vota es la Junta de Facultad (PDI, PTGAS y representantes de estudiantes). La web construye reputación y recoge propuestas; el voto se gana en persona.
-- Se publica en GitHub Pages desde la rama `main`, carpeta raíz. Cada push a `main` se publica solo.
+- Se publica en GitHub Pages desde la rama `main`, carpeta raíz. Cada push a `main` se publica solo (en uno o dos minutos; se sigue en la pestaña **Actions**).
+- Dirección actual: https://vmarhuendatn.github.io/camilopradoroman/ (hasta conectar el dominio, ver «Dominio»).
 - Responsable del proyecto: Victoria Marhuenda (comunicación de la campaña).
 
 Idioma: todo el contenido, los comentarios de código y los mensajes de commit van en **español**.
@@ -29,11 +30,13 @@ Si una petición choca con las reglas de marca o de campaña de este archivo, av
 python3 -m http.server 8000
 # → http://localhost:8000
 
-# Publicar
+# Publicar (directo)
 git add -A
 git commit -m "Descripción en español del cambio"
 git push origin main
 ```
+
+Si trabajas en otra rama, abre un pull request a `main` y publícalo solo cuando se pida («publica»). GitHub Pages guarda caché unos 10 minutos: si un cambio no se ve, recarga con Ctrl/Cmd + Mayús + R.
 
 No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expresamente.
 
@@ -42,19 +45,44 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | Necesito… | Archivo |
 | --- | --- |
 | Textos de la portada | `index.html` (cada sección empieza con `<!-- ============ NOMBRE ============ -->`) |
+| Medidas del programa | `index.html`, secciones «Programa» (cuatro líneas) y «Para ti» (por colectivo) |
 | Menú o redes sociales | `partials/header.html`, `partials/footer.html` |
 | Currículum y perfiles de investigador | `index.html`, sección «Quién soy» |
 | Agenda de encuentros | `data/encuentros.json` |
-| Colores, tipografías, espacios | `css/settings/tokens.css` |
+| Colores, tipografías, espacios, sombras, movimiento | `css/settings/tokens.css` |
 | Estilo de una sección | `css/sections/<seccion>.css` |
 | Estilo de un componente | `css/components/<componente>.css` |
 | Orden de carga de estilos | `css/main.css` |
 | Comportamiento | `js/modules/<modulo>.js`, arrancado desde `js/main.js` |
+| Menú móvil | `js/modules/nav.js` y `css/layout/header.css` |
+| Aparición al hacer scroll | `js/modules/reveal.js` y `css/base/motion.css` |
 | Ajustes editables (formulario, textos) | `js/config.js` |
 | Logotipo | `assets/logo/` |
 | Fotos | `assets/img/` (nombres en `assets/img/LEEME.md`) |
+| Imagen al compartir (WhatsApp, redes) | `assets/img/og-image.jpg` y etiquetas `og:` de `index.html` |
 | PDF del programa | `assets/docs/programa-camilo-prado.pdf` |
 | Privacidad | `privacidad.html` |
+
+## Estructura de la portada
+
+Orden de secciones en `index.html` y fondo de cada una (alternan papel y papel 2; nunca fondos de color):
+
+1. **Portada** (`hero`): eslogan, entradilla, botones y foto panorámica.
+2. **Manifiesto**: cita de presentación del programa y tres cifras (`.datos`).
+3. **Programa** (`#programa`, papel 2): cuatro líneas en tarjetas con desplegable «Ver las medidas» (`<details>`, funciona sin JavaScript).
+4. **Para ti** (`#para-ti`): pestañas Estudiantes · PDI · PTGAS con sus medidas.
+5. **Encuentros** (`#encuentros`, papel 2): tarjetas desde `data/encuentros.json`; carrusel en móvil.
+6. **Quién soy** (`#quien-soy`): retrato, presentación, cifras y perfiles de investigador.
+7. **Compromiso** (`#compromiso`, papel 2): cita de compromiso institucional y tres compromisos.
+8. **Contacto** (`#contacto`): formulario.
+
+## Origen de los textos
+
+- La fuente de las medidas, citas y cifras es el **programa electoral** (Word de la campaña, fuera del repositorio; versión actual: v1, archivo `2026_PROGRAMA_ELECTORAL_CPR_v.6.docx`). Cuando llegue una versión nueva, actualiza «Programa», «Para ti», «Manifiesto» y «Compromiso» a partir de ella.
+- Las medidas se resumen en frases cortas, sin añadir nada que no esté en el programa. Lo tachado en el documento no se publica.
+- Las citas (`.cita`) son literales; si se recortan, se marca con «…».
+- Cifras publicadas y su origen: 11.002 estudiantes (curso 2024-25) y «cerca de 12.000» (redondeo del propio programa); la Facultad imparte en todos los campus.
+- Los indicadores de cada línea aún no existen: siguen como `[INDICADOR PÚBLICO Y PLAZO]` hasta que la campaña los defina.
 
 ## Arquitectura y convenciones
 
@@ -62,14 +90,17 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 - HTML semántico: `section` con `aria-labelledby`, encabezados en orden (un solo `h1` por página).
 - Cabecera y pie solo en `partials/`; las páginas los insertan con `<div data-include="partials/…"></div>`.
 - Enlaces del menú con la forma `./#seccion`, para que funcionen desde cualquier página.
-- Fotos con `data-placeholder="…"`: si falta el archivo, `js/modules/photos.js` muestra un recuadro con instrucciones.
+- Fotos con `data-placeholder="…"`: si falta el archivo, `js/modules/photos.js` muestra un recuadro con instrucciones. Portada horizontal 16:9 (en móvil se recorta a 4:5 por el centro); retrato vertical 4:5.
+- `data-reveal` en un bloque lo hace aparecer suavemente al hacer scroll; `data-reveal-stagger` en un contenedor anima sus hijos en cascada. Sin JavaScript o con «reducir movimiento», todo se ve sin animar.
+- Etiqueta pequeña sobre cada `h2`: `<p class="eyebrow">Nombre de la sección</p>`. Palabra destacada con degradado de marca: `<span class="text-marca">…</span>` (solo en titulares grandes y con mesura).
 - Huecos pendientes entre corchetes y en mayúsculas: `[MEDIDA]`, `[FECHA]`, `[ID-FORMULARIO]`. Nunca inventes datos para rellenarlos.
 
 ### CSS
 - Metodología BEM: `.bloque`, `.bloque__elemento`, `.bloque--variante`.
 - **Ningún color, tipografía, radio o espacio literal fuera de `tokens.css`**: usa siempre `var(--…)`. Si necesitas un valor nuevo, créalo en `tokens.css` con un comentario.
 - Un archivo por sección o componente. Cada archivo nuevo se importa en `css/main.css`, en su bloque y en orden de lo general a lo particular.
-- Móvil primero, sin scroll horizontal a 360 px: `flex-wrap`, `grid` con `auto-fit`/`minmax` y `clamp()` para los tamaños de titular.
+- Móvil primero, sin scroll horizontal desde 320 px: `flex-wrap`, `grid` con `auto-fit`/`minmax(min(100%, var(--…)), 1fr)` y `clamp()` para tamaños y espacios.
+- Componentes disponibles: botones (`.btn--primario` tinta, `.btn--secundario` borde, `.link-flecha` enlace con «›»), tarjetas (`.card`), listas de medidas (`.lista`), citas (`.cita`, `.cita--s`), pestañas (`.tabs`) y formulario (`.form`).
 
 ### JavaScript
 - Módulos ES nativos (`type="module"`), sin librerías.
@@ -99,7 +130,7 @@ Añade un bloque a `data/encuentros.json` con `date`, `time`, `campus`, `place` 
 Pega la dirección de Formspree en `formEndpoint` de `js/config.js` y nombra el servicio en `privacidad.html`.
 
 ### Dominio
-Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra a `CNAME` cuando el DNS esté configurado (antes, la web se ve en `github.io/camilopradoroman`). `camilopradoroman.es` redirige a él desde el proveedor del dominio. Si cambia, actualiza `CNAME`, `robots.txt`, `sitemap.xml` y las etiquetas `canonical` y `og:` de `index.html`. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
+Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra a `CNAME` cuando el DNS esté configurado (antes, la web se ve en `github.io/camilopradoroman`). `camilopradoroman.es` redirige a él desde el proveedor del dominio. Mientras tanto, `canonical`, las etiquetas `og:`/`twitter:` de `index.html`, `robots.txt` y `sitemap.xml` apuntan a `https://vmarhuendatn.github.io/camilopradoroman/`; al activar el dominio (o si cambia) hay que cambiarlas todas a la dirección nueva. `404.html` no necesita cambios: un script fija la base de sus rutas según dónde se sirva.
 
 ## Reglas de marca (brandbook)
 
@@ -111,7 +142,10 @@ Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra
 | Rojo URJC #CB0017 | `--color-rojo` | Pertenencia: filete de cabecera, cifras, línea del sello (~5%); **nunca fondo dominante** |
 | Naranja tinta #A85200 | `--color-naranja-tinta` | Texto naranja sobre fondo claro |
 
-- Tipografías: **Libre Franklin** (titulares e interfaz; 800–900, cursiva negra en el logotipo) y **Newsreader** (texto largo y citas).
+- **Criterio visual (tipo app, sobrio):** fondos siempre claros (papel, papel 2 y tarjetas blancas con filete finísimo y sombra suave); texto en tinta. El color de marca **solo destaca, nunca es fondo**: cifras en rojo, numerales y etiquetas en naranja tinta, viñetas y filetes cortos en naranja, filete rojo fino de la cabecera y degradado naranja→rojo en la palabra clave del titular. Mucho aire, titulares grandes y compactos, botones en píldora.
+- Tipografías (no cambiarlas ni sus reservas):
+  - **Libre Franklin** (`--font-titular`): titulares, menú, botones, etiquetas, cifras y textos breves de interfaz (formulario, pie, perfiles). Cursiva negra en el logotipo.
+  - **Newsreader** (`--font-texto`): todo el texto largo — entradillas, párrafos, resúmenes de las líneas, **listas de medidas** (`.lista`), textos de compromisos y citas.
 - Logotipo: sello circular con las iniciales CP en cursiva y una fina línea roja desplazada. Usa los SVG de `assets/logo/`; no lo redibujes ni cambies sus colores.
 - Eslóganes: «Aquí se viene a crecer.» (paraguas) · «Tu título, con más valor.» (estudiantes) · «Escuchar primero. Decidir con datos.» (llamada a la acción).
 - Tono: tuteo, frases cortas, cada promesa con su medida y su indicador. Nada de memes, emojis en titulares, críticas al equipo saliente ni a otras candidaturas.
@@ -128,13 +162,16 @@ Principal: `www.camilopradoroman.com`, preparado en `CNAME.example`; se renombra
 ## Probar antes de terminar
 
 1. `python3 -m http.server 8000` y abrir `http://localhost:8000`.
-2. Revisar a 1366 px y a 390 px de ancho: sin scroll horizontal y con la cabecera y el pie cargados.
+2. Revisar al menos a 320, 390, 768, 1366 y 1920 px de ancho, y un móvil en horizontal (844 × 390): sin scroll horizontal, nada fuera de pantalla y con la cabecera y el pie cargados.
 3. Consola del navegador sin errores, salvo los 404 de fotos o del PDF pendientes de subir.
-4. Si se ha tocado: probar las pestañas con teclado (flechas), el envío del formulario y la lista de encuentros.
+4. Si se ha tocado: probar las pestañas con teclado (flechas), el menú móvil (abrir, cerrar con Escape), los desplegables de medidas, el envío del formulario y la lista de encuentros.
+5. Comprobar que el texto largo sale en Newsreader y los titulares en Libre Franklin.
 
 ## Contexto de la campaña (fuera del repositorio)
 
 - Plan de comunicación y brandbook definitivos: documento compartido de la campaña (pestañas «Plan de comunicación» y «Brandbook»).
 - Piezas de diseño (logo, posts, story, carrusel, maqueta web): lienzo de diseño de la campaña.
-- Pendiente de confirmar: fechas electorales, visto bueno de la Junta Electoral al uso de colores URJC, medidas del programa, equipo decanal y canal de WhatsApp.
+- Pendiente de confirmar: fechas electorales, visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal y canal de WhatsApp.
+- Pendiente de subir o configurar: PDF del programa, dirección de Formspree, enlace del canal de WhatsApp y DNS del dominio.
+- Erratas detectadas en el programa v1 (corregidas en la web, no en el Word): «intencionales» → «internacionales», «Postgrados» → «Posgrados», «EULIST» → «EULiST», paréntesis sin cerrar en la medida del TFG; «cambios normativos (RD)» no indica qué Real Decreto.
 - Confirmado: dominio `www.camilopradoroman.com` (y `.es`), Instagram `@cpradoroman`, LinkedIn y perfiles de investigador.

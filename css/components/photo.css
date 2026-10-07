@@ -7,6 +7,8 @@
   border-radius: var(--radius-l);
 }
 .photo--square { aspect-ratio: 1 / 1; }
+/* Retratos: el recorte se hace por abajo para no cortar la cabeza */
+.photo--retrato { object-position: center top; }
 .photo--wide { aspect-ratio: 4 / 5; }
 @media (min-width: 761px) { .photo--wide { aspect-ratio: 16 / 9; } }
 
