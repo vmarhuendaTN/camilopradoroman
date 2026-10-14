@@ -192,7 +192,7 @@ Cómo afecta a la web:
 - Contenido de campaña (sección «Cómo votar», enlace del menú, llamadas a votar) solo con `data-show-from="2026-10-23"`; lo gestiona `js/modules/schedule.js` con la hora de Madrid.
 - **27 y 28 de octubre: no se publica nada nuevo ni se hace push con cambios de contenido.** Si hace falta corregir un error, solo el error.
 - Mesas electorales: pendiente de que la Junta Electoral las publique; sustituir `[MESAS ELECTORALES · pendiente de la Junta Electoral]` en `index.html`.
-- Los encuentros de `data/encuentros.json` deben caer entre el 13 y el 26 de octubre.
+- Cafés con el candidato: **23 y 26 de octubre** en los campus de Móstoles, Vicálvaro y Fuenlabrada (destacados en `.cafe-dias` de `index.html`). Falta el día de cada campus, la hora y el lugar: en `data/encuentros.json` cada campus figura como «Día y hora por confirmar» / «Lugar por confirmar». Cuando se confirme, pon `date` en `AAAA-MM-DD`, `time` y `place`; así el módulo los ordena y los oculta al pasar.
 
 ## Reglas de campaña (no negociables)
 
@@ -215,7 +215,7 @@ Cómo afecta a la web:
 
 - Plan de comunicación y brandbook definitivos: documento compartido de la campaña (pestañas «Plan de comunicación» y «Brandbook»).
 - Piezas de diseño (logo, posts, story, carrusel, maqueta web): lienzo de diseño de la campaña.
-- Pendiente de confirmar: visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal, mesas electorales y fechas de los cafés por campus.
+- Pendiente de confirmar: visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal, mesas electorales, y día, hora y lugar de cada café.
 - Pendiente de subir o configurar: PDF del programa y activación de FormSubmit (enlace del primer correo).
 - No hay canal de WhatsApp: no lo añadas.
 - Erratas del programa final (corregidas en la web, no en el documento): «Postgrados» → «Posgrados», «EULIST» → «EULiST»; «cambios normativos (RD)» no indica qué Real Decreto; «alrededor de 12.000» (tabla) frente a «alrededor de 11.000» (compromiso institucional).
