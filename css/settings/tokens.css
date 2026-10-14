@@ -136,6 +136,7 @@
   --tarjeta-programa-min: 26rem;  /* ancho mínimo de las tarjetas del programa (2 columnas en escritorio) */
   --columna-min: 20rem;           /* ancho mínimo de columnas de texto (Quién soy) */
   --evento-alto: 13rem;
+  --logo-apoyo-alto: 4.5rem;      /* alto de los logos de las cartas de apoyo */
   --cifra-min: 8.5rem;            /* ancho mínimo de cada cifra (2 columnas en móvil) */
   --medida-cita: 52rem;           /* ancho máximo de las citas */
   --linea-alto: 1.75rem;          /* alto de la línea de cada medida (alinea la viñeta) */

@@ -3,6 +3,7 @@
   background: var(--color-papel-2);
   color: var(--color-pizarra);
   padding-block: var(--space-7) var(--space-6);
+  border-top: var(--border-fino) solid var(--color-linea);
   font-size: var(--fs-small);
 }
 
