@@ -65,6 +65,7 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | Aparición al hacer scroll | `js/modules/reveal.js` y `css/base/motion.css` |
 | Contenido que aparece en una fecha (campaña) | atributo `data-show-from` + `js/modules/schedule.js` |
 | Cómo votar | `index.html` (sección `#votar`) y `css/sections/votar.css` |
+| Apoyo internacional (cartas) | `index.html` (sección `#apoyo`), `css/sections/apoyo.css`, PDF en `assets/docs/carta-apoyo-*.pdf` y logos en `assets/logo/` |
 | Ajustes editables (formulario, textos) | `js/config.js` |
 | Logotipo | `assets/logo/` |
 | Fotos | `assets/img/` (nombres en `assets/img/LEEME.md`) |
@@ -83,8 +84,9 @@ Orden de secciones en `index.html` y fondo de cada una (alternan papel y papel 2
 5. **Encuentros** (`#encuentros`, papel 2): tarjetas desde `data/encuentros.json`; carrusel en móvil.
 6. **Cómo votar** (`#votar`): solo desde el 23 de octubre (`data-show-from`); cuándo, dónde, qué llevar y voto anticipado.
 7. **Quién soy** (`#quien-soy`): retrato, presentación, cifras y perfiles de investigador.
-8. **Compromiso** (`#compromiso`, papel 2): cita de compromiso institucional y tres compromisos.
-9. **Contacto** (`#contacto`): formulario.
+8. **Apoyo internacional** (`#apoyo`, papel 2): una tarjeta por carta de apoyo, con logos, frase literal en inglés, traducción, firma y enlace al PDF.
+9. **Compromiso** (`#compromiso`): cita de compromiso institucional y tres compromisos.
+10. **Contacto** (`#contacto`, papel 2): formulario. El pie lleva un filete superior para separarse del contacto.
 
 La portada muestra también la fecha de las elecciones bajo la etiqueta del titular (`.hero__date`).
 
@@ -94,6 +96,7 @@ La portada muestra también la fecha de las elecciones bajo la etiqueta del titu
 - Las medidas se resumen en frases cortas, sin añadir nada que no esté en el programa. Lo tachado en el documento no se publica.
 - Las citas (`.cita`) son literales; si se recortan, se marca con «…».
 - Cifras publicadas y su origen: 11.002 estudiantes (curso 2024-25) y «cerca de 12.000» (redondeo del propio programa); la Facultad imparte en todos los campus.
+- Cartas de apoyo: la frase citada es literal del PDF (en inglés, con `lang="en"`) y la traducción va aparte, entre comillas latinas. Firmantes y fechas, tal cual en la carta. Actuales: Natalja Tocelovska (SSE Riga y Riga Graduate School of Law, 10-10-2026) y Prof. Gürel Çetin (Istanbul University, 01-10-2026). Para añadir otra, copia un `<li class="apoyo">`, sube el PDF como `assets/docs/carta-apoyo-<institucion>.pdf` y el logo a `assets/logo/` con nombre sin espacios ni tildes.
 - Los indicadores de cada línea aún no existen: siguen como `[INDICADOR PÚBLICO Y PLAZO]` hasta que la campaña los defina.
 
 ## Arquitectura y convenciones

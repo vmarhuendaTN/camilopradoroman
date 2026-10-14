@@ -1,0 +1,54 @@
+/* Apoyo internacional: una tarjeta por carta, con logos, cita literal, traducción y firma. */
+.apoyos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tarjeta-programa-min)), 1fr));
+  gap: var(--space-4);
+}
+
+.apoyo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: clamp(var(--space-5), 3vw, var(--space-7));
+  background: var(--color-blanco);
+  border: var(--border-fino) solid var(--color-hairline);
+  border-radius: var(--radius-l);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+/* Logos a la misma altura, con su color original */
+.apoyo__logos { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-5); }
+.apoyo__logo { width: auto; height: var(--logo-apoyo-alto); object-fit: contain; }
+.apoyo__logo--ancho { height: calc(var(--logo-apoyo-alto) * 0.75); }
+
+.apoyo__cita { margin: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.apoyo__cita blockquote { margin: 0; }
+.apoyo__cita blockquote p {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-tinta);
+}
+.apoyo__cita blockquote p::before { content: '“'; }
+.apoyo__cita blockquote p::after { content: '”'; }
+
+.apoyo__traduccion { font-size: var(--fs-ui); color: var(--color-pizarra); }
+
+.apoyo__firma {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-4);
+  border-top: var(--border-fino) solid var(--color-linea);
+  font-size: var(--fs-small);
+  color: var(--color-pizarra);
+}
+.apoyo__firma strong { font-size: var(--fs-ui); font-weight: var(--fw-semibold); color: var(--color-tinta); }
+
+.apoyo__contexto { font-size: var(--fs-small); color: var(--color-pizarra); }
+
+.apoyo__pdf { margin-top: auto; align-self: flex-start; }
