@@ -1,23 +1,23 @@
 [
   {
-    "date": "[FECHA]",
-    "time": "[HORA]",
-    "campus": "Campus de Vicálvaro",
-    "place": "[ESPACIO]",
-    "format": "Café con el candidato"
-  },
-  {
-    "date": "[FECHA]",
-    "time": "[HORA]",
+    "date": "Día y hora por confirmar",
+    "time": "",
     "campus": "Campus de Móstoles",
-    "place": "[ESPACIO]",
+    "place": "Lugar por confirmar",
     "format": "Café con el candidato"
   },
   {
-    "date": "[FECHA]",
-    "time": "[HORA]",
-    "campus": "[OTRO CAMPUS]",
-    "place": "[ESPACIO]",
+    "date": "Día y hora por confirmar",
+    "time": "",
+    "campus": "Campus de Vicálvaro",
+    "place": "Lugar por confirmar",
+    "format": "Café con el candidato"
+  },
+  {
+    "date": "Día y hora por confirmar",
+    "time": "",
+    "campus": "Campus de Fuenlabrada",
+    "place": "Lugar por confirmar",
     "format": "Café con el candidato"
   }
 ]

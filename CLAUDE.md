@@ -63,6 +63,7 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | Comportamiento | `js/modules/<modulo>.js`, arrancado desde `js/main.js` |
 | Menú móvil | `js/modules/nav.js` y `css/layout/header.css` |
 | Aparición al hacer scroll | `js/modules/reveal.js` y `css/base/motion.css` |
+| Versión para imprimir | `css/base/print.css` (importado al final de `css/main.css`) y `js/modules/print.js` |
 | Contenido que aparece en una fecha (campaña) | atributo `data-show-from` + `js/modules/schedule.js` |
 | Cómo votar | `index.html` (sección `#votar`) y `css/sections/votar.css` |
 | Apoyo internacional (cartas) | `index.html` (sección `#apoyo`), `css/sections/apoyo.css`, PDF en `assets/docs/carta-apoyo-*.pdf` y logos en `assets/logo/` |
@@ -159,6 +160,7 @@ Definitivo: **todo es `camilopradoroman.es`** — web `www.camilopradoroman.es` 
 | Naranja tinta #A85200 | `--color-naranja-tinta` | Texto naranja sobre fondo claro |
 
 - **Criterio visual (tipo app, sobrio):** fondos siempre claros (papel, papel 2 y tarjetas blancas con filete finísimo y sombra suave); texto en tinta. El color de marca **solo destaca, nunca es fondo**: cifras en rojo, numerales y etiquetas en naranja tinta, viñetas y filetes cortos en naranja, filete rojo fino de la cabecera y degradado naranja→rojo en la palabra clave del titular. Mucho aire, titulares grandes y compactos, botones en píldora.
+- **Impresión:** en pantalla el fondo es papel; al imprimir, todo sale sobre blanco, sin menú, botones ni formulario, con los desplegables abiertos, las tres pestañas de «Para ti» y el titular en naranja tinta sólido (sin degradado). Si añades una tarjeta o bloque nuevo, inclúyelo en `css/base/print.css` para que no se parta entre páginas.
 - Tipografía (decisión de la campaña, octubre de 2026): **Libre Franklin en toda la web**; no cambiarla ni sus reservas.
   - Titulares (`--font-titular`): pesos 700–900, interletrado ajustado. Cursiva negra en el logotipo.
   - Texto largo (`--font-texto`, también Libre Franklin): entradillas, párrafos, resúmenes, listas de medidas, compromisos y citas, en peso normal (citas en peso medio, sin cursiva).
@@ -190,7 +192,7 @@ Cómo afecta a la web:
 - Contenido de campaña (sección «Cómo votar», enlace del menú, llamadas a votar) solo con `data-show-from="2026-10-23"`; lo gestiona `js/modules/schedule.js` con la hora de Madrid.
 - **27 y 28 de octubre: no se publica nada nuevo ni se hace push con cambios de contenido.** Si hace falta corregir un error, solo el error.
 - Mesas electorales: pendiente de que la Junta Electoral las publique; sustituir `[MESAS ELECTORALES · pendiente de la Junta Electoral]` en `index.html`.
-- Los encuentros de `data/encuentros.json` deben caer entre el 13 y el 26 de octubre.
+- Cafés con el candidato: **23 y 26 de octubre** en los campus de Móstoles, Vicálvaro y Fuenlabrada (destacados en `.cafe-dias` de `index.html`). Falta el día de cada campus, la hora y el lugar: en `data/encuentros.json` cada campus figura como «Día y hora por confirmar» / «Lugar por confirmar». Cuando se confirme, pon `date` en `AAAA-MM-DD`, `time` y `place`; así el módulo los ordena y los oculta al pasar.
 
 ## Reglas de campaña (no negociables)
 
@@ -213,7 +215,7 @@ Cómo afecta a la web:
 
 - Plan de comunicación y brandbook definitivos: documento compartido de la campaña (pestañas «Plan de comunicación» y «Brandbook»).
 - Piezas de diseño (logo, posts, story, carrusel, maqueta web): lienzo de diseño de la campaña.
-- Pendiente de confirmar: visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal, mesas electorales y fechas de los cafés por campus.
+- Pendiente de confirmar: visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal, mesas electorales, y día, hora y lugar de cada café.
 - Pendiente de subir o configurar: PDF del programa y activación de FormSubmit (enlace del primer correo).
 - No hay canal de WhatsApp: no lo añadas.
 - Erratas del programa final (corregidas en la web, no en el documento): «Postgrados» → «Posgrados», «EULIST» → «EULiST»; «cambios normativos (RD)» no indica qué Real Decreto; «alrededor de 12.000» (tabla) frente a «alrededor de 11.000» (compromiso institucional).

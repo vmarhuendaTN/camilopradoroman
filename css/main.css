@@ -35,3 +35,6 @@
 @import url('sections/compromiso.css');
 @import url('sections/legal.css');
 @import url('sections/votar.css');
+
+/* 6. Impresión: siempre al final, para que mande sobre lo anterior */
+@import url('base/print.css');
