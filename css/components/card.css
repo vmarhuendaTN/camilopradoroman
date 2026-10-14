@@ -68,7 +68,18 @@
   transition: transform var(--dur-media) var(--ease-out);
 }
 .card__detalle[open] summary::after { transform: rotate(-135deg); }
-.card__detalle[open] .lista { animation: panel-entra var(--dur-media) var(--ease-out); }
+.card__detalle[open] .card__objetivos { animation: panel-entra var(--dur-media) var(--ease-out); }
+
+/* Objetivos dentro del desplegable: subtítulo pequeño y su lista de medidas */
+.card__objetivos { display: flex; flex-direction: column; gap: var(--space-5); padding-top: var(--space-3); }
+.card__subtitulo {
+  margin: 0 0 var(--space-1);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-naranja-tinta);
+}
 
 .card__indicator {
   font-size: var(--fs-small);

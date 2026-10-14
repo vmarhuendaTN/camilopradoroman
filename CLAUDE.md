@@ -52,7 +52,7 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | Necesito… | Archivo |
 | --- | --- |
 | Textos de la portada | `index.html` (cada sección empieza con `<!-- ============ NOMBRE ============ -->`) |
-| Medidas del programa | `index.html`, secciones «Programa» (cuatro líneas) y «Para ti» (por colectivo) |
+| Medidas del programa | `index.html`, secciones «Programa» (cinco líneas con sus objetivos) y «Para ti» (resumen por colectivo) |
 | Menú o redes sociales | `partials/header.html`, `partials/footer.html` |
 | Currículum y perfiles de investigador | `index.html`, sección «Quién soy» |
 | Agenda de encuentros | `data/encuentros.json` |
@@ -78,9 +78,9 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 Orden de secciones en `index.html` y fondo de cada una (alternan papel y papel 2; nunca fondos de color):
 
 1. **Portada** (`hero`): eslogan, entradilla, botones y foto panorámica.
-2. **Manifiesto**: cita de presentación del programa y tres cifras (`.datos`).
-3. **Programa** (`#programa`, papel 2): cuatro líneas en tarjetas con desplegable «Ver las medidas» (`<details>`, funciona sin JavaScript).
-4. **Para ti** (`#para-ti`): pestañas Estudiantes · PDI · PTGAS con sus medidas.
+2. **Manifiesto**: cita de presentación del programa y «La Facultad en cifras» (cinco datos, `.datos`, con nota de origen).
+3. **Programa** (`#programa`, papel 2): cinco líneas (Estudiantes, PDI, PTGAS, Instalaciones y proyección, Innovación e investigación) en tarjetas con desplegable «Ver objetivos y medidas» (`<details>`, funciona sin JavaScript); dentro, cada objetivo del programa con su lista.
+4. **Para ti** (`#para-ti`): pestañas Estudiantes · PDI · PTGAS con un resumen de sus medidas.
 5. **Encuentros** (`#encuentros`, papel 2): tarjetas desde `data/encuentros.json`; carrusel en móvil.
 6. **Cómo votar** (`#votar`): solo desde el 23 de octubre (`data-show-from`); cuándo, dónde, qué llevar y voto anticipado.
 7. **Quién soy** (`#quien-soy`): retrato, presentación, cifras y perfiles de investigador.
@@ -92,10 +92,10 @@ La portada muestra también la fecha de las elecciones bajo la etiqueta del titu
 
 ## Origen de los textos
 
-- La fuente de las medidas, citas y cifras es el **programa electoral** (Word de la campaña, fuera del repositorio; versión actual: v1, archivo `2026_PROGRAMA_ELECTORAL_CPR_v.6.docx`). Cuando llegue una versión nueva, actualiza «Programa», «Para ti», «Manifiesto» y «Compromiso» a partir de ella.
+- La fuente de las medidas, citas y cifras es el **programa electoral final** (octubre de 2026, fuera del repositorio): cinco bloques con objetivos y compromisos, «La Facultad en cifras» y «Compromiso institucional». Si llega otra versión, actualiza «Programa», «Para ti», «Manifiesto» y «Compromiso» a partir de ella.
 - Las medidas se resumen en frases cortas, sin añadir nada que no esté en el programa. Lo tachado en el documento no se publica.
 - Las citas (`.cita`) son literales; si se recortan, se marca con «…».
-- Cifras publicadas y su origen: 11.002 estudiantes (curso 2024-25) y «cerca de 12.000» (redondeo del propio programa); la Facultad imparte en todos los campus.
+- Cifras publicadas (tabla «La Facultad en cifras» del programa): 11.002 estudiantes (curso 2024-25); todos los campus; valoración docente del estudiante 4,10; satisfacción con los servicios de la URJC 3,52; satisfacción global con la titulación 3,60 (Grado, 2024-25; no hay datos de Máster en el portal de transparencia). La cita del compromiso institucional dice «alrededor de 11.000 estudiantes» (literal), aunque la tabla del programa dice «alrededor de 12.000»: pendiente de unificar en el programa.
 - Cartas de apoyo: la frase citada es literal del PDF (en inglés, con `lang="en"`) y la traducción va aparte, entre comillas latinas. Firmantes y fechas, tal cual en la carta. Actuales: Natalja Tocelovska (SSE Riga y Riga Graduate School of Law, 10-10-2026) y Prof. Gürel Çetin (Istanbul University, 01-10-2026). Para añadir otra, copia un `<li class="apoyo">`, sube el PDF como `assets/docs/carta-apoyo-<institucion>.pdf` y el logo a `assets/logo/` con nombre sin espacios ni tildes.
 - Los indicadores de cada línea aún no existen: siguen como `[INDICADOR PÚBLICO Y PLAZO]` hasta que la campaña los defina.
 
@@ -216,5 +216,5 @@ Cómo afecta a la web:
 - Pendiente de confirmar: visto bueno de la Junta Electoral al uso de colores URJC, versión definitiva del programa e indicadores de cada línea, equipo decanal, mesas electorales y fechas de los cafés por campus.
 - Pendiente de subir o configurar: PDF del programa y activación de FormSubmit (enlace del primer correo).
 - No hay canal de WhatsApp: no lo añadas.
-- Erratas detectadas en el programa v1 (corregidas en la web, no en el Word): «intencionales» → «internacionales», «Postgrados» → «Posgrados», «EULIST» → «EULiST», paréntesis sin cerrar en la medida del TFG; «cambios normativos (RD)» no indica qué Real Decreto.
+- Erratas del programa final (corregidas en la web, no en el documento): «Postgrados» → «Posgrados», «EULIST» → «EULiST»; «cambios normativos (RD)» no indica qué Real Decreto; «alrededor de 12.000» (tabla) frente a «alrededor de 11.000» (compromiso institucional).
 - Confirmado: dominio `www.camilopradoroman.es`, Instagram `@cpradoroman`, LinkedIn, correo `hola@camilopradoroman.es`, perfiles de investigador y calendario electoral.
