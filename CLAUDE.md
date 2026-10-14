@@ -63,6 +63,7 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | Comportamiento | `js/modules/<modulo>.js`, arrancado desde `js/main.js` |
 | Menú móvil | `js/modules/nav.js` y `css/layout/header.css` |
 | Aparición al hacer scroll | `js/modules/reveal.js` y `css/base/motion.css` |
+| Versión para imprimir | `css/base/print.css` (importado al final de `css/main.css`) y `js/modules/print.js` |
 | Contenido que aparece en una fecha (campaña) | atributo `data-show-from` + `js/modules/schedule.js` |
 | Cómo votar | `index.html` (sección `#votar`) y `css/sections/votar.css` |
 | Apoyo internacional (cartas) | `index.html` (sección `#apoyo`), `css/sections/apoyo.css`, PDF en `assets/docs/carta-apoyo-*.pdf` y logos en `assets/logo/` |
@@ -159,6 +160,7 @@ Definitivo: **todo es `camilopradoroman.es`** — web `www.camilopradoroman.es` 
 | Naranja tinta #A85200 | `--color-naranja-tinta` | Texto naranja sobre fondo claro |
 
 - **Criterio visual (tipo app, sobrio):** fondos siempre claros (papel, papel 2 y tarjetas blancas con filete finísimo y sombra suave); texto en tinta. El color de marca **solo destaca, nunca es fondo**: cifras en rojo, numerales y etiquetas en naranja tinta, viñetas y filetes cortos en naranja, filete rojo fino de la cabecera y degradado naranja→rojo en la palabra clave del titular. Mucho aire, titulares grandes y compactos, botones en píldora.
+- **Impresión:** en pantalla el fondo es papel; al imprimir, todo sale sobre blanco, sin menú, botones ni formulario, con los desplegables abiertos, las tres pestañas de «Para ti» y el titular en naranja tinta sólido (sin degradado). Si añades una tarjeta o bloque nuevo, inclúyelo en `css/base/print.css` para que no se parta entre páginas.
 - Tipografía (decisión de la campaña, octubre de 2026): **Libre Franklin en toda la web**; no cambiarla ni sus reservas.
   - Titulares (`--font-titular`): pesos 700–900, interletrado ajustado. Cursiva negra en el logotipo.
   - Texto largo (`--font-texto`, también Libre Franklin): entradillas, párrafos, resúmenes, listas de medidas, compromisos y citas, en peso normal (citas en peso medio, sin cursiva).

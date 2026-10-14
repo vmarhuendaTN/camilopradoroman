@@ -10,8 +10,9 @@ import { initEncuentros } from './modules/encuentros.js';
 import { initContactForm } from './modules/contact-form.js';
 import { initPhotos } from './modules/photos.js';
 import { initYear } from './modules/year.js';
+import { initPrint } from './modules/print.js';
 
-const modules = [initNav, initReveal, initYear, initPhotos, initTabs, initContactForm, initEncuentros];
+const modules = [initNav, initReveal, initYear, initPhotos, initTabs, initContactForm, initEncuentros, initPrint];
 
 async function start() {
   await loadIncludes();
