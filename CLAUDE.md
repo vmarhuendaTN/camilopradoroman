@@ -166,6 +166,7 @@ Definitivo: **todo es `camilopradoroman.es`** — web `www.camilopradoroman.es` 
   - Texto largo (`--font-texto`, también Libre Franklin): entradillas, párrafos, resúmenes, listas de medidas, compromisos y citas, en peso normal (citas en peso medio, sin cursiva).
   - Newsreader ya no se usa ni se carga; no la reintroduzcas sin que se pida.
 - Logotipo: sello circular con las iniciales CP en cursiva y una fina línea roja desplazada. Usa los SVG de `assets/logo/`; no lo redibujes ni cambies sus colores.
+- Denominación: «Candidato a Decano» (con mayúsculas) en la etiqueta de portada, el título de la página y las etiquetas para buscadores y redes; no «Candidatura al decanato». El aviso legal del pie y la política de privacidad conservan su redacción.
 - Eslogan único: «Trabajo visible, resultados medibles.» (sustituye a «Aquí se viene a crecer.», octubre de 2026). Sin eslóganes secundarios. En la portada, «resultados medibles.» lleva el degradado de marca (`.text-marca`).
 - Tono: tuteo, frases cortas, cada promesa con su medida y su indicador. Nada de memes, emojis en titulares, críticas al equipo saliente ni a otras candidaturas.
 - Accesibilidad: contraste mínimo 4,5:1 en texto, objetivos táctiles de 44 px, foco visible, `alt` en todas las imágenes.
