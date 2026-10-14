@@ -83,7 +83,7 @@ Orden de secciones en `index.html` y fondo de cada una (alternan papel y papel 2
 3. **Programa** (`#programa`, papel 2): cinco líneas (Estudiantes, PDI, PTGAS, Instalaciones y proyección, Innovación e investigación) en tarjetas con desplegable «Ver objetivos y medidas» (`<details>`, funciona sin JavaScript); dentro, cada objetivo del programa con su lista.
 4. **Para ti** (`#para-ti`): pestañas Estudiantes · PDI · PTGAS con un resumen de sus medidas.
 5. **Encuentros** (`#encuentros`, papel 2): tarjetas desde `data/encuentros.json`; carrusel en móvil.
-6. **Cómo votar** (`#votar`): solo desde el 23 de octubre (`data-show-from`); cuándo, dónde, qué llevar y voto anticipado.
+6. **Cómo votar** (`#votar`): visible siempre, con su enlace en el menú. Información neutra (no pide el voto): cuándo y segunda vuelta, dónde, qué llevar, voto anticipado y peso de cada colectivo, con la fuente oficial.
 7. **Quién soy** (`#quien-soy`): retrato, presentación, cifras y perfiles de investigador.
 8. **Apoyo internacional** (`#apoyo`, papel 2): una tarjeta por carta de apoyo, con logos, frase literal en inglés, traducción, firma y enlace al PDF.
 9. **Compromiso** (`#compromiso`): cita de compromiso institucional y tres compromisos.
@@ -190,7 +190,7 @@ Fuentes: convocatoria firmada por el decano el 29-09-2026 y Reglamento para las 
 Cómo afecta a la web:
 
 - Antes del 23 de octubre la web presenta la candidatura y el programa, pero **no pide el voto** (el reglamento reserva la petición pública de voto a la campaña, art. 12.3).
-- Contenido de campaña (sección «Cómo votar», enlace del menú, llamadas a votar) solo con `data-show-from="2026-10-23"`; lo gestiona `js/modules/schedule.js` con la hora de Madrid.
+- «Cómo votar» es **información electoral neutra** y se muestra siempre: sin imperativos de voto («vota», «vota a…») ni referencias a la candidatura dentro de la sección; en impersonal («se puede votar…»); datos tal cual en la convocatoria y el Reglamento, con la fuente citada. Cualquier **llamada a votar** o petición de voto va solo con `data-show-from="2026-10-23"` (lo gestiona `js/modules/schedule.js` con la hora de Madrid) y nunca el 27 ni el 28.
 - **27 y 28 de octubre: no se publica nada nuevo ni se hace push con cambios de contenido.** Si hace falta corregir un error, solo el error.
 - Mesas electorales: pendiente de que la Junta Electoral las publique; sustituir `[MESAS ELECTORALES · pendiente de la Junta Electoral]` en `index.html`.
 - Cafés con el candidato: **23 y 26 de octubre** en los campus de Móstoles, Vicálvaro y Fuenlabrada (destacados en `.cafe-dias` de `index.html`). Falta el día de cada campus, la hora y el lugar: en `data/encuentros.json` cada campus figura como «Día y hora por confirmar» / «Lugar por confirmar». Cuando se confirme, pon `date` en `AAAA-MM-DD`, `time` y `place`; así el módulo los ordena y los oculta al pasar.
@@ -208,7 +208,7 @@ Cómo afecta a la web:
 1. `python3 -m http.server 8000` y abrir `http://localhost:8000`.
 2. Revisar al menos a 320, 390, 768, 1366 y 1920 px de ancho, y un móvil en horizontal (844 × 390): sin scroll horizontal, nada fuera de pantalla y con la cabecera y el pie cargados.
 3. Consola del navegador sin errores, salvo los 404 de fotos o del PDF pendientes de subir.
-4. Hoy, antes del 23 de octubre, «Cómo votar» y su enlace del menú no deben verse. Para probar la campaña sin tocar el código, adelanta el reloj del navegador (por ejemplo, el reloj simulado de Playwright) al 24 de octubre; si fuerzas la fecha en `schedule.js`, deshazlo antes del commit.
+4. Antes del 23 de octubre no debe verse ninguna petición de voto. Para probar contenido con `data-show-from`, adelanta el reloj del navegador (por ejemplo, el reloj simulado de Playwright); si fuerzas la fecha en `schedule.js`, deshazlo antes del commit.
 5. Si se ha tocado: probar las pestañas con teclado (flechas), el menú móvil (abrir, cerrar con Escape), los desplegables de medidas, el envío del formulario y la lista de encuentros.
 6. Comprobar que toda la web sale en Libre Franklin (y que no se carga Newsreader).
 
