@@ -98,7 +98,7 @@ La portada muestra también la fecha de las elecciones bajo la etiqueta del titu
 - Las citas (`.cita`) son literales; si se recortan, se marca con «…».
 - Cifras publicadas (tabla «La Facultad en cifras» del programa): 11.002 estudiantes (curso 2024-25); todos los campus; valoración docente del estudiante 4,10; satisfacción con los servicios de la URJC 3,52; satisfacción global con la titulación 3,60 (Grado, 2024-25; no hay datos de Máster en el portal de transparencia). La cita del compromiso institucional dice «alrededor de 11.000 estudiantes» (literal), aunque la tabla del programa dice «alrededor de 12.000»: pendiente de unificar en el programa.
 - Cartas de apoyo: la frase citada es literal del PDF (en inglés, con `lang="en"`) y la traducción va aparte, entre comillas latinas. Firmantes y fechas, tal cual en la carta. Actuales: Natalja Tocelovska (SSE Riga y Riga Graduate School of Law, 10-10-2026) y Prof. Gürel Çetin (Istanbul University, 01-10-2026). Para añadir otra, copia un `<li class="apoyo">`, sube el PDF como `assets/docs/carta-apoyo-<institucion>.pdf` y el logo a `assets/logo/` con nombre sin espacios ni tildes.
-- Los indicadores de cada línea aún no existen: siguen como `[INDICADOR PÚBLICO Y PLAZO]` hasta que la campaña los defina.
+- Los indicadores de cada línea aún no existen y **no se muestran** (se quitó «Cómo lo mediremos»). Si la campaña los define, se añaden al final de cada tarjeta con `<p class="card__indicator"><strong>Cómo lo mediremos</strong> …</p>` (el estilo sigue en `card.css`).
 
 ## Arquitectura y convenciones
 
@@ -192,8 +192,8 @@ Cómo afecta a la web:
 - Antes del 23 de octubre la web presenta la candidatura y el programa, pero **no pide el voto** (el reglamento reserva la petición pública de voto a la campaña, art. 12.3).
 - «Cómo votar» es **información electoral neutra** y se muestra siempre: sin imperativos de voto («vota», «vota a…») ni referencias a la candidatura dentro de la sección; en impersonal («se puede votar…»); datos tal cual en la convocatoria y el Reglamento, con la fuente citada. Cualquier **llamada a votar** o petición de voto va solo con `data-show-from="2026-10-23"` (lo gestiona `js/modules/schedule.js` con la hora de Madrid) y nunca el 27 ni el 28.
 - **27 y 28 de octubre: no se publica nada nuevo ni se hace push con cambios de contenido.** Si hace falta corregir un error, solo el error.
-- Mesas electorales: pendiente de que la Junta Electoral las publique; sustituir `[MESAS ELECTORALES · pendiente de la Junta Electoral]` en `index.html`.
-- Cafés con el candidato: **23 y 26 de octubre** en los campus de Móstoles, Vicálvaro y Fuenlabrada (destacados en `.cafe-dias` de `index.html`). Falta el día de cada campus, la hora y el lugar: en `data/encuentros.json` cada campus figura como «Día y hora por confirmar» / «Lugar por confirmar». Cuando se confirme, pon `date` en `AAAA-MM-DD`, `time` y `place`; así el módulo los ordena y los oculta al pasar.
+- Mesas electorales: pendiente de que la Junta Electoral las publique. En «Cómo votar · Dónde» pone «Mesas electorales pendientes de publicación por la Junta Electoral.» (sin corchetes, porque se ve en la web); sustitúyelo por las mesas cuando se publiquen.
+- Cafés con el candidato: **23 y 26 de octubre** en los campus de Móstoles, Vicálvaro y Fuenlabrada (destacados en `.cafe-dias` de `index.html`). Falta el día de cada campus, la hora y el lugar: en `data/encuentros.json` cada campus figura como «Día y hora por confirmar» / «Lugar por confirmar», con `format` vacío (no se repite «Café con el candidato», que ya es el título de la sección). Cuando se confirme, pon `date` en `AAAA-MM-DD`, `time` y `place`; así el módulo los ordena y los oculta al pasar.
 
 ## Reglas de campaña (no negociables)
 
