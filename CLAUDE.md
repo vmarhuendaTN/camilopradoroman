@@ -2,6 +2,8 @@
 
 Instrucciones para Claude Code. Léelas antes de tocar nada en este repositorio.
 
+> **MODO «EN CONSTRUCCIÓN» (desde el 15-10-2026).** Por decisión de la campaña, `main` solo publica una página «Web en construcción» (`index.html`, con `noindex` y `robots.txt` que bloquea todo) y lo mínimo que necesita: `CNAME`, `.nojekyll`, `css/settings/tokens.css` y el sello y el favicon de `assets/logo/`. **La web completa está guardada en la rama `copia-web-completa-2026-10-15`** (mismo contenido que se publicó el 15-10-2026). No publiques nada de la web completa hasta que la campaña lo pida expresamente. Para restaurarla: trabaja sobre esa rama (o haz `git checkout copia-web-completa-2026-10-15 -- .` en una rama nueva), aplica ahí los cambios pendientes y publica con un pull request a `main`. El resto de este archivo describe la web completa.
+
 ## Qué es este proyecto
 
 Web estática de la candidatura del Dr. Camilo Prado Román (catedrático de Economía Financiera y Contabilidad, presidente de AEDEM) al decanato de la Facultad de Ciencias de la Economía y de la Empresa de la Universidad Rey Juan Carlos (URJC).
