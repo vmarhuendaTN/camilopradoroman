@@ -1,0 +1,36 @@
+/* Utilidades compartidas: contenedor, accesibilidad y logotipo. */
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--wide { max-width: calc(var(--container-wide) + var(--gutter) * 2); }
+.container--narrow { max-width: calc(var(--container-narrow) + var(--gutter) * 2); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -4rem;
+  z-index: 100;
+  background: var(--color-tinta);
+  color: var(--color-papel);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pill);
+}
+.skip-link:focus { top: var(--space-4); color: var(--color-papel); }
+
+.sello { flex-shrink: 0; border-radius: 50%; }

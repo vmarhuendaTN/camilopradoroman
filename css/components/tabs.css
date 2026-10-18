@@ -1,0 +1,62 @@
+/* Pestañas accesibles como control segmentado (js/modules/tabs.js). Sin JavaScript se muestran todos los paneles. */
+.tabs { display: flex; flex-direction: column; align-items: center; gap: var(--space-6); }
+
+.tabs__list {
+  position: relative;
+  display: inline-flex;
+  max-width: 100%;
+  padding: var(--space-1);
+  background: var(--color-papel-2);
+  border: var(--border-fino) solid var(--color-linea);
+  border-radius: var(--radius-pill);
+}
+
+.tabs__tab {
+  min-height: var(--tap-min);
+  padding: var(--control-pad-y-s) clamp(var(--space-4), 4vw, var(--space-6));
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-pizarra);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: background-color var(--dur-media) var(--ease-out), color var(--dur-media) var(--ease-out), box-shadow var(--dur-media) var(--ease-out);
+}
+.tabs__tab:hover { color: var(--color-tinta); }
+.tabs__tab[aria-selected='true'] {
+  background: var(--color-blanco);
+  color: var(--color-tinta);
+  box-shadow: var(--sombra-control);
+}
+
+.tabs__panels { width: 100%; display: grid; gap: var(--space-4); }
+
+.tabs__panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tarjeta-min)), 1fr));
+  gap: var(--space-5) var(--space-7);
+  align-items: start;
+  padding: clamp(var(--space-5), 5vw, var(--space-7));
+  background: var(--color-blanco);
+  border: var(--border-fino) solid var(--color-hairline);
+  border-radius: var(--radius-l);
+  box-shadow: var(--sombra-tarjeta);
+}
+@media (min-width: 900px) {
+  .tabs__panel { grid-template-columns: 2fr 3fr; }
+  .tabs__head { position: sticky; top: calc(var(--header-h) + var(--space-5)); }
+}
+.tabs__panel:not([hidden]) { animation: panel-entra var(--dur-media) var(--ease-out); }
+
+@keyframes panel-entra {
+  from { opacity: 0; transform: translateY(var(--space-2)); }
+  to { opacity: 1; transform: none; }
+}
+
+.tabs__kicker { display: block; margin-bottom: var(--space-3); }
+
+.tabs__title {
+  font-size: var(--fs-h3);
+  letter-spacing: var(--tracking-tight);
+}

@@ -1,0 +1,11 @@
+/* Páginas de texto: privacidad y 404. */
+.legal p {
+  font-family: var(--font-texto);
+  font-size: var(--fs-text);
+  line-height: var(--lh-prose);
+}
+.legal strong { font-family: var(--font-titular); font-weight: var(--fw-semibold); }
+.legal .btn { font-family: var(--font-titular); }
+
+.notfound { min-height: 70vh; display: flex; align-items: center; text-align: center; }
+.notfound .section__inner { align-items: center; }
