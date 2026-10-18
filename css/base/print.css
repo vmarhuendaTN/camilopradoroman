@@ -1,0 +1,120 @@
+/*
+  Versión para imprimir: fondo blanco, sin sombras ni animaciones, sin menú ni botones,
+  y tarjetas que no se parten entre páginas. En pantalla no cambia nada.
+  js/modules/print.js abre los desplegables y muestra las tres pestañas antes de imprimir.
+*/
+@media print {
+  @page { margin: 1.6cm 1.4cm; }
+
+  /* Algo más pequeño que en pantalla: todo se mide en rem, así que escala junto */
+  html { scroll-padding-top: 0; font-size: 82%; }
+
+  body,
+  .section,
+  .section--papel-2,
+  .footer,
+  .header {
+    background: var(--color-blanco) !important;
+  }
+
+  .header {
+    position: static;
+    border-bottom: var(--border-fino) solid var(--color-linea);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  /* Fuera lo que solo sirve en pantalla */
+  .skip-link,
+  .header nav,
+  .header__toggle,
+  .hero__actions,
+  .section__actions,
+  .tabs__list,
+  .form,
+  .card__detalle summary::after,
+  .profile::after,
+  .stat__link::after { display: none !important; }
+
+  /* Nada de animaciones ni sombras */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+  .js-reveal [data-reveal] { opacity: 1 !important; transform: none !important; }
+
+  /* El degradado del titular no se imprime con «sin fondos»: se usa un color sólido */
+  .text-marca {
+    background: none !important;
+    -webkit-text-fill-color: currentColor;
+    color: var(--color-naranja-tinta);
+  }
+
+  /* Menos aire entre secciones */
+  .section { padding-block: var(--space-6); }
+  .hero { padding-block: var(--space-5) var(--space-6); }
+  .section__inner { gap: var(--space-5); }
+
+  /* Tarjetas con filete en lugar de sombra. Las largas (programa, pestañas) pueden
+     partirse entre páginas, pero cada objetivo y cada medida se mantienen enteros. */
+  .card,
+  .tabs__panel { border: var(--border-fino) solid var(--color-linea); }
+  .card__objetivo,
+  .card__number,
+  .card__title,
+  .tabs__head { break-inside: avoid; }
+  .card__number,
+  .card__title,
+  .card__text,
+  .tabs__head { break-after: avoid; }
+
+  .event,
+  .cafe-dias,
+  .vote__item,
+  .apoyo,
+  .compromiso,
+  .dato,
+  .stat,
+  .cita {
+    border: var(--border-fino) solid var(--color-linea);
+    break-inside: avoid;
+  }
+  .dato,
+  .stat,
+  .cita { border: 0; }
+
+  h1, h2, h3, h4,
+  .section__header,
+  .cifras__titulo { break-after: avoid; }
+  .section__header { break-inside: avoid; }
+  .lista li { break-inside: avoid; }
+
+  /* Pestañas: los tres colectivos uno detrás de otro */
+  .tabs__panel[hidden] { display: grid !important; }
+  .tabs__panels { gap: var(--space-4); }
+
+  /* Encuentros: rejilla en lugar de carrusel */
+  .events {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  /* Fotos más contenidas */
+  .hero__media { max-width: 70%; }
+  .about__media { max-width: 50%; }
+
+  /* Las rejillas pasan a bloques en papel: así los saltos de página respetan los títulos */
+  .apoyos { display: block; }
+  .apoyo + .apoyo { margin-top: var(--space-4); }
+
+  .footer {
+    border-top: var(--border-fino) solid var(--color-linea);
+    break-inside: avoid;
+  }
+}

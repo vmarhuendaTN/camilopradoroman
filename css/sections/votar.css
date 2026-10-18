@@ -1,0 +1,36 @@
+/* Cómo votar (información práctica de la jornada electoral). Visible desde el 23 de octubre. */
+.vote {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tarjeta-min)), 1fr));
+  gap: var(--space-4);
+}
+
+.vote__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background: var(--color-blanco);
+  border: var(--border-fino) solid var(--color-hairline);
+  border-radius: var(--radius-l);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.vote__label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-naranja-tinta);
+}
+
+.vote__value {
+  font-family: var(--font-texto);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+  color: var(--color-tinta);
+}

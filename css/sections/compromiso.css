@@ -1,0 +1,42 @@
+/* Compromiso institucional: tres compromisos en columnas, sin fondos de color. */
+.compromisos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tarjeta-min)), 1fr));
+  gap: var(--space-4);
+}
+
+.compromiso {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background: var(--color-blanco);
+  border: var(--border-fino) solid var(--color-hairline);
+  border-radius: var(--radius-l);
+}
+
+/* Filete corto de acento sobre cada título */
+.compromiso__title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-size: var(--fs-h4);
+  letter-spacing: var(--tracking-snug);
+}
+.compromiso__title::before {
+  content: '';
+  width: var(--space-5);
+  height: var(--border-grueso);
+  background: var(--color-naranja);
+  border-radius: var(--radius-pill);
+}
+
+.compromiso__text {
+  font-family: var(--font-texto);
+  font-size: var(--fs-text);
+  line-height: var(--lh-snug);
+  color: var(--color-pizarra);
+}

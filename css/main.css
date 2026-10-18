@@ -1,0 +1,40 @@
+/*
+  Punto de entrada de los estilos. El orden importa: de lo general a lo particular.
+  Para añadir una sección nueva: crea css/sections/mi-seccion.css e impórtala al final del bloque 5.
+*/
+
+/* 1. Ajustes: variables de marca */
+@import url('settings/tokens.css');
+
+/* 2. Base: reinicio, tipografía, utilidades y movimiento */
+@import url('base/reset.css');
+@import url('base/typography.css');
+@import url('base/utilities.css');
+@import url('base/motion.css');
+
+/* 3. Estructura compartida */
+@import url('layout/header.css');
+@import url('layout/footer.css');
+@import url('layout/section.css');
+
+/* 4. Componentes reutilizables */
+@import url('components/button.css');
+@import url('components/photo.css');
+@import url('components/list.css');
+@import url('components/quote.css');
+@import url('components/card.css');
+@import url('components/tabs.css');
+@import url('components/form.css');
+
+/* 5. Secciones de página */
+@import url('sections/hero.css');
+@import url('sections/manifiesto.css');
+@import url('sections/encuentros.css');
+@import url('sections/quien-soy.css');
+@import url('sections/apoyo.css');
+@import url('sections/compromiso.css');
+@import url('sections/legal.css');
+@import url('sections/votar.css');
+
+/* 6. Impresión: siempre al final, para que mande sobre lo anterior */
+@import url('base/print.css');
