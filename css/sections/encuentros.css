@@ -108,3 +108,39 @@
   color: var(--color-pizarra);
 }
 .cafe-dias__nota strong { font-weight: var(--fw-semibold); color: var(--color-tinta); }
+
+/* Enlace a reunión Teams en las tarjetas de encuentros */
+.event__link-wrapper {
+  margin-top: auto;
+  margin-bottom: calc(var(--space-2) * -1);
+  padding-top: var(--space-3);
+  border-top: var(--border-fino) solid var(--color-hairline);
+}
+
+.event__link {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(135deg, var(--color-naranja) 0%, var(--color-rojo) 100%);
+  color: var(--color-blanco);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-small);
+  text-decoration: none;
+  border-radius: var(--radius-m);
+  transition: transform var(--dur-rapida) var(--ease-out), box-shadow var(--dur-rapida) var(--ease-out);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  box-shadow: 0 2px 4px rgba(203, 0, 23, 0.2);
+}
+
+.event__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(203, 0, 23, 0.3);
+}
+
+.event__link:focus-visible {
+  outline: 2px solid var(--color-naranja);
+  outline-offset: 2px;
+}

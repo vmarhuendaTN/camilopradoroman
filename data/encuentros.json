@@ -4,34 +4,39 @@
     "time": "14.00",
     "campus": "Centros adscritos",
     "place": "",
-    "format": ""
+    "format": "",
+    "link": ""
   },
   {
     "date": "2026-10-26",
     "time": "09.30",
     "campus": "PTGAS",
     "place": "Aula 102, Edificio Aulario, Campus Madrid Vicálvaro",
-    "format": "Reunión online (Microsoft Teams)"
+    "format": "Reunión online (Microsoft Teams)",
+    "link": "https://teams.microsoft.com/meet/3864779310178019?p=twaHV16sDqnaAJScAK"
   },
   {
     "date": "2026-10-26",
     "time": "10.30",
     "campus": "Estudiantes",
     "place": "Aula 102, Edificio Aulario, Campus Madrid Vicálvaro",
-    "format": "Reunión online (Microsoft Teams)"
+    "format": "Reunión online (Microsoft Teams)",
+    "link": "https://teams.microsoft.com/meet/3520550299308927?p=0LEPh9KfhFa7gb6CFK"
   },
   {
     "date": "2026-10-26",
     "time": "12.00",
     "campus": "PDI",
     "place": "Aula 102, Edificio Aulario, Campus Madrid Vicálvaro",
-    "format": "Reunión online (Microsoft Teams)"
+    "format": "Reunión online (Microsoft Teams)",
+    "link": "https://teams.microsoft.com/meet/3585065772905402?p=YFufVNXdiOzf8eezSm"
   },
   {
     "date": "2026-10-26",
     "time": "14.00",
     "campus": "Coordinadores de grado y directores de máster",
     "place": "Aula 102, Edificio Aulario, Campus Madrid Vicálvaro",
-    "format": "Reunión online (Microsoft Teams)"
+    "format": "Reunión online (Microsoft Teams)",
+    "link": "https://teams.microsoft.com/meet/3883342686623846?p=xWqE8RfSOQ4AjxiZjB"
   }
 ]
