@@ -41,7 +41,22 @@ function eventItem(event) {
   place.className = 'event__place';
   place.textContent = [event.place, event.format].filter(Boolean).join(' · ');
 
-  li.append(when, campus, place);
+  const elements = [when, campus, place];
+
+  if (event.link) {
+    const linkWrapper = document.createElement('p');
+    linkWrapper.className = 'event__link-wrapper';
+    const link = document.createElement('a');
+    link.className = 'event__link';
+    link.href = event.link;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = 'Unirse a la reunión (Teams)';
+    linkWrapper.append(link);
+    elements.push(linkWrapper);
+  }
+
+  li.append(...elements);
   return li;
 }
 
