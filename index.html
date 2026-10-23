@@ -6,7 +6,11 @@
   <title>Camilo Prado · Candidato a Decano</title>
   <meta name="description" content="Camilo Prado, Candidato a Decano de la Facultad de Ciencias de la Economía y de la Empresa (URJC). Trabajo visible, resultados medibles.">
   <meta name="theme-color" content="#fbf7f1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
   <link rel="canonical" href="https://www.camilopradoroman.es/">
 
   <!-- Vista previa al compartir (WhatsApp, LinkedIn, X…). Las redes exigen URL completa: usa el dominio
@@ -34,6 +38,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400..900;1,400..900&display=swap">
 
   <!-- Estilos: un único punto de entrada que importa el resto -->
+  <link rel="preload" as="image" href="assets/img/camilo-prado-hero.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/main.css">
 
   <!-- Comportamiento: módulos JavaScript -->
@@ -59,10 +64,15 @@
             <a class="btn btn--primario" href="#programa">Ver el programa</a>
             <a class="link-flecha" href="#encuentros">Encuentros</a>
           </div>
+          <!-- Petición de voto: solo los días de campaña oficial (art. 12.3); nunca el 27 ni el 28 -->
+          <p class="hero__voto" data-show-on="2026-10-23,2026-10-26" hidden>El miércoles 28, de 9 a 20 h, <strong>te pido tu voto.</strong> <a class="link-flecha" href="#votar">Cómo votar</a></p>
         </div>
         <div class="hero__media" data-reveal>
           <!-- FOTO: assets/img/camilo-prado-hero.jpg (horizontal 3:2; en móvil se recorta a 4:5 por el centro) -->
-          <img class="photo photo--wide" src="assets/img/camilo-prado-hero.jpg" alt="Camilo Prado, sonriente, sentado a su mesa" width="1500" height="1000" fetchpriority="high" data-placeholder="Camilo en el campus">
+          <picture>
+            <source srcset="assets/img/camilo-prado-hero.webp" type="image/webp">
+            <img class="photo photo--wide" src="assets/img/camilo-prado-hero.jpg" alt="Camilo Prado, sonriente, sentado a su mesa" width="1800" height="1198" fetchpriority="high" decoding="async" data-placeholder="Camilo en el campus">
+          </picture>
         </div>
       </div>
     </section>
@@ -453,7 +463,10 @@
         <div class="about">
           <div class="about__media" data-reveal>
             <!-- FOTO: sube assets/img/camilo-prado-retrato.jpg (vertical 4:5) -->
-            <img class="photo photo--retrato" src="assets/img/camilo-prado-retrato.jpg" alt="Retrato de Camilo Prado" width="800" height="1000" loading="lazy" data-placeholder="retrato de Camilo">
+            <picture>
+              <source srcset="assets/img/camilo-prado-retrato.webp" type="image/webp">
+              <img class="photo photo--retrato" src="assets/img/camilo-prado-retrato.jpg" alt="Retrato de Camilo Prado" width="800" height="1000" loading="lazy" decoding="async" data-placeholder="retrato de Camilo">
+            </picture>
           </div>
           <div class="about__text" data-reveal>
             <p class="eyebrow">Quién soy</p>
@@ -579,11 +592,11 @@
         <form class="form" data-contact-form method="POST" novalidate data-reveal>
           <div class="field">
             <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" maxlength="100" required>
           </div>
           <div class="field">
             <label for="email">Correo electrónico</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="150" required>
           </div>
           <div class="field field--full">
             <label for="colectivo">Soy</label>
@@ -596,7 +609,7 @@
           </div>
           <div class="field field--full">
             <label for="mensaje">Tu propuesta o pregunta</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <textarea id="mensaje" name="mensaje" rows="5" minlength="10" maxlength="3000" required></textarea>
           </div>
           <div class="check">
             <input id="privacidad" name="privacidad" type="checkbox" required>

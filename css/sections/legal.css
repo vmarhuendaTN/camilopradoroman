@@ -9,3 +9,10 @@
 
 .notfound { min-height: 70vh; display: flex; align-items: center; text-align: center; }
 .notfound .section__inner { align-items: center; }
+
+.legal__subtitulo {
+  margin-top: var(--space-6);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-snug);
+}

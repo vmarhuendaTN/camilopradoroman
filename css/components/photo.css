@@ -8,6 +8,7 @@
 }
 .photo--square { aspect-ratio: 1 / 1; }
 /* Retratos: el recorte se hace por abajo para no cortar la cabeza */
+picture { display: block; }
 .photo--retrato { object-position: center top; }
 .photo--wide { aspect-ratio: 4 / 5; }
 /* En pantallas anchas, el formato real de la foto (3:2): se ve entera, sin recortar manos ni cabeza */
