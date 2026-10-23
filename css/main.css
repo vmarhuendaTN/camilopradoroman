@@ -25,6 +25,7 @@
 @import url('components/card.css');
 @import url('components/tabs.css');
 @import url('components/form.css');
+@import url('components/cookies.css');
 
 /* 5. Secciones de página */
 @import url('sections/hero.css');

@@ -15,6 +15,18 @@ export const config = {
     notConfigured: 'El formulario aún no está activado.',
   },
 
+  // Analítica (Google Analytics 4). Pon aquí el ID de medición (G-XXXXXXXXXX) para activarla.
+  // Vacío = sin analítica y sin aviso de cookies. Con ID, la web pide consentimiento antes de cargar nada.
+  ga4Id: '',
+
+  // Aviso de cookies (solo aparece si hay ga4Id)
+  cookies: {
+    text: 'Usamos cookies de analítica (Google Analytics) solo si las aceptas, para saber cuántas personas visitan la web. Nada más.',
+    accept: 'Aceptar',
+    reject: 'Rechazar',
+    more: 'Más información',
+  },
+
   // Encuentros: texto cuando no hay ninguno próximo
   eventsEmpty: 'Pronto anunciaremos nuevos encuentros. Síguenos en redes para no perderte ninguno.',
 };

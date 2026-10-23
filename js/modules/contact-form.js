@@ -26,6 +26,14 @@ export function initContactForm(root = document) {
         return;
       }
 
+      // Trampa antispam: si un robot rellena el campo oculto, se simula el envío y no se manda nada
+      const honey = form.querySelector('[name="_honey"]');
+      if (honey && honey.value) {
+        form.reset();
+        setStatus(config.messages.ok, 'ok');
+        return;
+      }
+
       if (config.formEndpoint.includes('[')) {
         setStatus(config.messages.notConfigured, 'error');
         return;

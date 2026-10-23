@@ -11,8 +11,9 @@ import { initContactForm } from './modules/contact-form.js';
 import { initPhotos } from './modules/photos.js';
 import { initYear } from './modules/year.js';
 import { initPrint } from './modules/print.js';
+import { initAnalytics } from './modules/analytics.js';
 
-const modules = [initNav, initReveal, initYear, initPhotos, initTabs, initContactForm, initEncuentros, initPrint];
+const modules = [initNav, initReveal, initYear, initPhotos, initTabs, initContactForm, initEncuentros, initPrint, initAnalytics];
 
 async function start() {
   await loadIncludes();

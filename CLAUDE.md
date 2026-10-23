@@ -72,7 +72,10 @@ No hay `npm`, compilación ni dependencias. No las añadas sin que se pida expre
 | Fotos | `assets/img/` (nombres en `assets/img/LEEME.md`) |
 | Imagen al compartir (WhatsApp, redes) | `assets/img/og-image.jpg` y etiquetas `og:` de `index.html` |
 | PDF del programa | `assets/docs/programa-camilo-prado.pdf` |
-| Privacidad | `privacidad.html` |
+| Privacidad (incluye cookies) | `privacidad.html` |
+| Aviso legal y condiciones de uso | `aviso-legal.html` |
+| Analítica GA4 y aviso de cookies | `ga4Id` en `js/config.js` (vacío = desactivada), `js/modules/analytics.js`, `css/components/cookies.css` |
+| Favicons | `favicon.ico` (raíz), `assets/logo/favicon.svg`, `assets/logo/apple-touch-icon.png` |
 
 ## Estructura de la portada
 
@@ -107,6 +110,8 @@ La portada muestra también la fecha de las elecciones bajo la etiqueta del titu
 - Cabecera y pie solo en `partials/`; las páginas los insertan con `<div data-include="partials/…"></div>`.
 - Enlaces del menú con la forma `./#seccion`, para que funcionen desde cualquier página.
 - Fotos con `data-placeholder="…"`: si falta el archivo, `js/modules/photos.js` muestra un recuadro con instrucciones. Portada horizontal 3:2, se ve entera en escritorio (en móvil se recorta a 4:5 por el centro); retrato 2:3 en un hueco 4:5, recortado por abajo (`.photo--retrato`).
+- `data-show-on="AAAA-MM-DD,AAAA-MM-DD"` (con `hidden`) muestra un elemento solo esos días: la petición de voto de la portada (`.hero__voto`) usa los dos días de campaña.
+- Fotos: se sirven en WebP con JPG de reserva (`<picture>`), a 1800 px (portada) y 1000 px (retrato). No subas originales de cámara: redúcelos antes.
 - `data-show-from="AAAA-MM-DD"` (con `hidden` en el HTML) hace que un elemento aparezca solo desde esa fecha, en hora de Madrid; `data-hide-from` lo vuelve a ocultar. Lo gestiona `js/modules/schedule.js`, que se ejecuta justo después de cargar los parciales.
 - `data-reveal` en un bloque lo hace aparecer suavemente al hacer scroll; `data-reveal-stagger` en un contenedor anima sus hijos en cascada. Sin JavaScript o con «reducir movimiento», todo se ve sin animar.
 - Etiqueta pequeña sobre cada `h2`: `<p class="eyebrow">Nombre de la sección</p>`. Palabra destacada con degradado de marca: `<span class="text-marca">…</span>` (solo en titulares grandes y con mesura).
